@@ -16,7 +16,7 @@ class _Chat2State extends State<Chat2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 24, 23, 23),
+      backgroundColor: const Color.fromARGB(255, 24, 23, 23),
       body: Container(
         width: MediaQuery.of(context).size.width,
         child: Padding(
@@ -82,7 +82,7 @@ class _Chat2State extends State<Chat2> {
               ),
               isActive == false
                   ? chatPage2Widget(
-                      Color.fromARGB(216, 243, 241, 241),
+                      const Color.fromARGB(216, 243, 241, 241),
                       'S',
                       null,
                       'Sync contacts',
@@ -94,7 +94,7 @@ class _Chat2State extends State<Chat2> {
                             builder: (BuildContext context) {
                               return AlertDialog(
                                 backgroundColor:
-                                    Color.fromARGB(255, 43, 42, 42),
+                                    const Color.fromARGB(255, 43, 42, 42),
                                 title: const Text(
                                   'So\'rov',
                                   style: TextStyle(color: Colors.white),

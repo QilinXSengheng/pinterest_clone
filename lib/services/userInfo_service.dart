@@ -25,7 +25,7 @@ class UserInfoService {
         Log.e(DioExceptions.fromDioError(response.data).toString());
         return left(DioExceptions.fromDioError(response.data).toString());
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       Log.e(e.toString());
       if (DioExceptions.fromDioError(e).toString() == 'Unauthorized') {
         return left('Token xato');

@@ -1,4 +1,6 @@
 class Endpoints {
+  final String username;
+
   static String baseUrl = 'https://api.unsplash.com/';
 
   static String token = 'Client-ID klMeLuvFR1zMevDjTISl4Z4bxrpxq1RbmeL1xMtxIx8';
@@ -11,4 +13,6 @@ class Endpoints {
   static String getNightAlbum = '${baseUrl}collections/8240068/photos';
   static String getUserInfo = '${baseUrl}users/faxridd1n';
   static String searchPhotos = '${baseUrl}search/photos';
+
+  Endpoints({required this.username});
 }

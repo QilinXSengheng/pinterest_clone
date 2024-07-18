@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pinterest_clone/models/userInfo_model.dart';
+import 'package:pinterest_clone/screen/pages/others/setting_page.dart';
 import 'package:pinterest_clone/screen/widgets/bottomNavWidgets/bottomNavItem.dart';
 import 'package:pinterest_clone/storage/storage.dart';
 
@@ -22,9 +23,9 @@ class _ProfilePageState extends State<ProfilePage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 24, 23, 23),
+        backgroundColor: const Color.fromARGB(255, 24, 23, 23),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 24, 23, 23),
+          backgroundColor: const Color.fromARGB(255, 24, 23, 23),
           elevation: 0,
           foregroundColor: Colors.white,
           actions: [
@@ -37,9 +38,14 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SettingPage(),
+                ),
+              ),
               icon: const Icon(
-                Icons.more_horiz,
+                Icons.settings,
                 color: Colors.white,
                 size: 25,
               ),
@@ -56,7 +62,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         EasyLoading.show();
-                        return SizedBox();
+                        return const SizedBox();
                       } else if (snapshot.hasData) {
                         snapshot.data?.fold((l) {
                           EasyLoading.showError(l);
@@ -127,8 +133,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   backgroundColor: Colors.transparent,
                                   bottom: const TabBar(
                                       indicatorWeight: 3,
-                                      indicatorColor:
-                                          Color.fromARGB(255, 70, 69, 69),
+                                      indicatorColor: Color.fromARGB(255, 70, 69, 69),
                                       indicatorPadding: EdgeInsets.only(
                                         left: 10,
                                         right: 10,
@@ -142,222 +147,195 @@ class _ProfilePageState extends State<ProfilePage> {
                                         ),
                                       ]),
                                 )),
-
-                        SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height:( MediaQuery.of(context).size.height*0.332*box!.values.length)/2,
-                  child: TabBarView(children: [
-                    Container(
-                      color: Color.fromARGB(255, 24, 23, 23),
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 25,
-                          ),
-                          const Text(
-                            'Inspire with an Idea Pin',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 20,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Container(
-                            alignment: Alignment.center,
-                            child: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    shape: StadiumBorder(),
-                                    backgroundColor:
-                                        Color.fromARGB(255, 235, 21, 21)),
-                                child: const Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 2, vertical: 12),
-                                  child: Text(
-                                    'Create',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                )),
-                          )
-                        ],
-                      ),
-                    ),
-                    Container(
-                      color: Color.fromARGB(255, 24, 23, 23),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.83,
-                                  height: 43,
-                                  child: TextFormField(
-                                    textAlignVertical: TextAlignVertical.bottom,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                    cursorColor: Colors.red,
-                                    cursorHeight: 25,
-                                    decoration: const InputDecoration(
-                                      hintText: 'Search your Pins',
-                                      hintStyle: TextStyle(color: Colors.grey),
-                                      prefixIcon: Icon(
-                                        Icons.search,
-                                        color: Colors.white70,
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width,
+                              height: (MediaQuery.of(context).size.height * 0.332 * box!.values.length) / 2,
+                              child: TabBarView(children: [
+                                Container(
+                                  color: const Color.fromARGB(255, 24, 23, 23),
+                                  child: Column(
+                                    children: [
+                                      const SizedBox(
+                                        height: 25,
                                       ),
-                                      filled: true,
-                                      fillColor:
-                                          Color.fromARGB(255, 49, 48, 48),
-                                      border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(20),
+                                      const Text(
+                                        'Inspire with an Idea Pin',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                          fontSize: 20,
                                         ),
-                                        borderSide: BorderSide.none,
-                                        ),
-                                    ),
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                    Icons.add,
-                                    color: Colors.white,
-                                    size: 30,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SafeArea(
-                            child: Container(
-                              child: MasonryGridView.builder(
-                                  physics: NeverScrollableScrollPhysics(),
-                                  shrinkWrap: true,
-                                  gridDelegate:
-                                      const SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2,
-                                  ),
-                                  itemCount: box!.values.length,
-                                  //physics: ClampingScrollPhysics(),
-                                  itemBuilder: (context, index) {
-                                    return box!.isNotEmpty
-                                        ? Padding(
-                                            padding: EdgeInsets.all(5),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(15),
-                                                  child: Image(
-                                                      image: NetworkImage(box!
-                                                          .getAt(index)!
-                                                          .urls!
-                                                          .small!)),
+                                      ),
+                                      const SizedBox(
+                                        height: 20,
+                                      ),
+                                      Container(
+                                        alignment: Alignment.center,
+                                        child: ElevatedButton(
+                                            onPressed: () {},
+                                            style: ElevatedButton.styleFrom(
+                                                shape: const StadiumBorder(),
+                                                backgroundColor: const Color.fromARGB(255, 235, 21, 21)),
+                                            child: const Padding(
+                                              padding: EdgeInsets.symmetric(horizontal: 2, vertical: 12),
+                                              child: Text(
+                                                'Create',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
                                                 ),
-                                                Container(
-                                                  height: 30,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Row(
-                                                        children: [
-                                                          const Icon(
-                                                            Icons.favorite,
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    211,
-                                                                    14,
-                                                                    14),
-                                                            size: 15,
+                                              ),
+                                            )),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  color: const Color.fromARGB(255, 24, 23, 23),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            children: [
+                                              SizedBox(
+                                                width: MediaQuery.of(context).size.width * 0.83,
+                                                height: 43,
+                                                child: TextFormField(
+                                                  textAlignVertical: TextAlignVertical.bottom,
+                                                  style: const TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                  cursorColor: Colors.red,
+                                                  cursorHeight: 25,
+                                                  decoration: const InputDecoration(
+                                                    hintText: 'Search your Pins',
+                                                    hintStyle: TextStyle(color: Colors.grey),
+                                                    prefixIcon: Icon(
+                                                      Icons.search,
+                                                      color: Colors.white70,
+                                                    ),
+                                                    filled: true,
+                                                    fillColor: Color.fromARGB(255, 49, 48, 48),
+                                                    border: OutlineInputBorder(
+                                                      borderRadius: BorderRadius.all(
+                                                        Radius.circular(20),
+                                                      ),
+                                                      borderSide: BorderSide.none,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              IconButton(
+                                                onPressed: () {},
+                                                icon: const Icon(
+                                                  Icons.add,
+                                                  color: Colors.white,
+                                                  size: 30,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        SafeArea(
+                                          child: Container(
+                                            child: MasonryGridView.builder(
+                                                physics: const NeverScrollableScrollPhysics(),
+                                                shrinkWrap: true,
+                                                gridDelegate:
+                                                    const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                                  crossAxisCount: 2,
+                                                ),
+                                                itemCount: box!.values.length,
+                                                //physics: ClampingScrollPhysics(),
+                                                itemBuilder: (context, index) {
+                                                  return box!.isNotEmpty
+                                                      ? Padding(
+                                                          padding: const EdgeInsets.all(5),
+                                                          child: Column(
+                                                            mainAxisSize: MainAxisSize.min,
+                                                            children: [
+                                                              ClipRRect(
+                                                                borderRadius: BorderRadius.circular(15),
+                                                                child: Image(
+                                                                    image: NetworkImage(
+                                                                        box!.getAt(index)!.urls!.small!)),
+                                                              ),
+                                                              Container(
+                                                                height: 30,
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment.spaceBetween,
+                                                                  children: [
+                                                                    Row(
+                                                                      children: [
+                                                                        const Icon(
+                                                                          Icons.favorite,
+                                                                          color: Color.fromARGB(255, 211, 14, 14),
+                                                                          size: 15,
+                                                                        ),
+                                                                        SizedBox(
+                                                                          width:
+                                                                              MediaQuery.of(context).size.width *
+                                                                                  0.3,
+                                                                          child: Text(
+                                                                            // ignore: unnecessary_null_comparison
+                                                                            box!.getAt(index)!.description ??
+                                                                                'Likes',
+                                                                            overflow: TextOverflow.ellipsis,
+                                                                            style: const TextStyle(
+                                                                              color: Colors.white,
+                                                                              fontSize: 12,
+                                                                              fontWeight: FontWeight.bold,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                    IconButton(
+                                                                        onPressed: () {},
+                                                                        icon: const Icon(
+                                                                          Icons.more_horiz,
+                                                                          color:
+                                                                              Color.fromARGB(255, 218, 216, 216),
+                                                                        ))
+                                                                  ],
+                                                                ),
+                                                              )
+                                                            ],
                                                           ),
-                                                          SizedBox(
-                                                            width: MediaQuery.of(
-                                                                        context)
-                                                                    .size
-                                                                    .width *
-                                                                0.3,
-                                                              child: Text(
-                                                              // ignore: unnecessary_null_comparison
-                                                              box!
-                                                                      .getAt(
-                                                                          index)!
-                                                                      .description ?? 'Likes',
-                                                              overflow:
-                                                                  TextOverflow
-                                                                      .ellipsis,
-                                                              style:
-                                                                  const TextStyle(
-                                                                color: Colors
-                                                                    .white,
-                                                                fontSize: 12,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
+                                                        )
+                                                      : Container(
+                                                          child: const Center(
+                                                            child: Text(
+                                                              'You haven\'t saved media',
+                                                              style: TextStyle(
+                                                                color: Colors.white,
+                                                                fontWeight: FontWeight.bold,
+                                                                fontSize: 20,
                                                               ),
                                                             ),
                                                           ),
-                                                        ],
-                                                      ),
-                                                      IconButton(
-                                                          onPressed: () {},
-                                                          icon: const Icon(
-                                                            Icons.more_horiz,
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    218,
-                                                                    216,
-                                                                    216),
-                                                          ))
-                                                    ],
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          )
-                                        : Container(
-                                            child: const Center(
-                                              child: Text(
-                                                'You haven\'t saved media',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 20,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                  }),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ]),
-                )
+                                                        );
+                                                }),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ]),
+                            )
                           ],
                         );
                       } else {
                         return Text("Error: ${snapshot.error}");
                       }
-                    }
-                  ),
+                    }),
               ],
             ),
           ),

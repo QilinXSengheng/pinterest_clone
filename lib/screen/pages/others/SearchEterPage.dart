@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pinterest_clone/models/allAlbum.model.dart';
-import 'package:pinterest_clone/screen/pages/others/Page1.dart';
+import 'package:pinterest_clone/screen/pages/others/other_tab.dart';
 import '../../../models/SearchModel.dart';
 import '../../../services/lifestyle_service.dart';
 import '../../../storage/storage.dart';

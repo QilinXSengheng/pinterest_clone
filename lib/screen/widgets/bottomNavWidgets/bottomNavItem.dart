@@ -196,5 +196,5 @@ List<StatefulWidget> pages = [
   const SearchPage(),
   const AddPage(),
   const ChatPage(),
-  ProfilePage(),
+  const ProfilePage(),
 ];

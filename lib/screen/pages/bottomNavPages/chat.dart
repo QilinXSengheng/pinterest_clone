@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:pinterest_clone/screen/pages/bottomNavPages/chatPage1.dart';
-import 'package:pinterest_clone/screen/pages/bottomNavPages/chatPage2.dart';
+import 'package:pinterest_clone/screen/pages/bottomNavPages/updates_tab.dart';
+import 'package:pinterest_clone/screen/pages/bottomNavPages/messages_tab.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});

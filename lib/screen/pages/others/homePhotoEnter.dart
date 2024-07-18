@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pinterest_clone/models/allAlbum.model.dart';
-import 'package:pinterest_clone/screen/pages/others/Page1.dart';
+import 'package:pinterest_clone/screen/pages/others/other_tab.dart';
 import '../../../services/lifestyle_service.dart';
 import '../../../storage/storage.dart';
 import '../../widgets/homeWidgets/homePhoto_item.dart';
-import 'Page2.dart';
+import 'yellow_rush_tab.dart';
 
 int a = 0;
 List<AllPhotoModel> photoList = [];
@@ -65,7 +65,7 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                           right: 15,
                           child: CircleAvatar(
                             radius: 22,
-                            backgroundColor: Color.fromARGB(213, 43, 41, 41),
+                            backgroundColor: const Color.fromARGB(213, 43, 41, 41),
                             child: Center(
                               child: IconButton(
                                 onPressed: () {},
@@ -102,8 +102,7 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                     ? ClipOval(
                                         child: Image(
                                           image: NetworkImage(
-                                            widget.model.user!.profileImage!
-                                                .small!,
+                                            widget.model.user!.profileImage!.small!,
                                           ),
                                           fit: BoxFit.cover,
                                           height: 48,
@@ -121,8 +120,7 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.45,
+                                      width: MediaQuery.of(context).size.width * 0.45,
                                       child: Text(
                                         widget.model.user!.name!,
                                         overflow: TextOverflow.ellipsis,
@@ -146,13 +144,11 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                 ElevatedButton(
                                   onPressed: () {},
                                   style: ElevatedButton.styleFrom(
-                                    shape: StadiumBorder(),
-                                    backgroundColor:
-                                        Color.fromARGB(255, 63, 61, 61),
+                                    shape: const StadiumBorder(),
+                                    backgroundColor: const Color.fromARGB(255, 63, 61, 61),
                                   ),
                                   child: const Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 7.0, vertical: 14),
+                                    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 14),
                                     child: Text(
                                       'Follow',
                                       style: TextStyle(
@@ -171,9 +167,7 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * 0.7,
                               child: Text(
-                                widget.model.description == null
-                                    ? ''
-                                    : widget.model.description!,
+                                widget.model.description == null ? '' : widget.model.description!,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
                                   color: Colors.white,
@@ -201,12 +195,10 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                       onPressed: () {},
                                       style: ElevatedButton.styleFrom(
                                         shape: StadiumBorder(),
-                                        backgroundColor:
-                                            Color.fromARGB(255, 63, 61, 61),
+                                        backgroundColor: Color.fromARGB(255, 63, 61, 61),
                                       ),
                                       child: const Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 5.0, vertical: 18),
+                                        padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 18),
                                         child: Text(
                                           'View',
                                           style: TextStyle(
@@ -225,46 +217,32 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                         var item = widget.model;
                                         a++;
                                         box!.add(item);
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                              
+                                        ScaffoldMessenger.of(context).showSnackBar(
                                           SnackBar(
                                             backgroundColor: Colors.transparent,
                                             margin: EdgeInsets.only(
-                                              bottom: MediaQuery.of(context)
-                                                      .size
-                                                      .height -
-                                                  95,
+                                              bottom: MediaQuery.of(context).size.height - 95,
                                               top: 25,
                                             ),
-                                            dismissDirection:
-                                                DismissDirection.up,
+                                            dismissDirection: DismissDirection.up,
                                             behavior: SnackBarBehavior.floating,
                                             duration: Duration(seconds: 1),
                                             content: SizedBox(
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.6,
+                                              width: MediaQuery.of(context).size.width * 0.6,
                                               height: 80,
                                               child: Container(
-                                                padding: EdgeInsets.symmetric(horizontal: 35,vertical: 8),
+                                                padding: EdgeInsets.symmetric(horizontal: 35, vertical: 8),
                                                 decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(40),
+                                                  borderRadius: BorderRadius.circular(40),
                                                   color: Color.fromARGB(255, 26, 24, 24),
                                                 ),
                                                 child: Row(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.center,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                   children: [
                                                     Image(
                                                       image: NetworkImage(
-                                                        widget
-                                                            .model.urls!.small!,
+                                                        widget.model.urls!.small!,
                                                       ),
                                                       height: 40,
                                                       width: 40,
@@ -274,8 +252,7 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                                       style: TextStyle(
                                                         color: Colors.white,
                                                         fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.bold,
+                                                        fontWeight: FontWeight.bold,
                                                       ),
                                                     ),
                                                   ],
@@ -287,12 +264,10 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                       },
                                       style: ElevatedButton.styleFrom(
                                         shape: StadiumBorder(),
-                                        backgroundColor:
-                                            Color.fromARGB(255, 189, 6, 6),
+                                        backgroundColor: Color.fromARGB(255, 189, 6, 6),
                                       ),
                                       child: const Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 5.0, vertical: 18),
+                                        padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 18),
                                         child: Text(
                                           'Save',
                                           style: TextStyle(
@@ -346,8 +321,7 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                           FutureBuilder(
                             future: LifeAlbumService.getLifeAlbum(),
                             builder: (context, snapshot) {
-                              if (snapshot.connectionState ==
-                                  ConnectionState.waiting) {
+                              if (snapshot.connectionState == ConnectionState.waiting) {
                                 EasyLoading.show();
                                 return SizedBox();
                               } else if (snapshot.hasData) {
@@ -363,15 +337,13 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                       shrinkWrap: true,
                                       crossAxisSpacing: 10,
                                       mainAxisSpacing: 10,
-                                      gridDelegate:
-                                          const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                      gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 2,
                                       ),
                                       itemCount: photoList.length,
                                       physics: ClampingScrollPhysics(),
                                       itemBuilder: (context, index) {
-                                        return homeItem1(
-                                            photoList[index], context);
+                                        return homeItem1(photoList[index], context);
                                       }),
                                 );
                               } else {

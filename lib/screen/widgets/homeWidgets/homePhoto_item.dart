@@ -9,8 +9,7 @@ import '../../../models/SearchModel.dart';
 Widget homeItem1(AllPhotoModel model, BuildContext context) {
   return InkWell(
     onTap: () {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => HomePhotoEnter(model)));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePhotoEnter(model)));
     },
     child: Column(
       children: [
@@ -23,24 +22,36 @@ Widget homeItem1(AllPhotoModel model, BuildContext context) {
           ),
         ),
         Container(
+          margin: const EdgeInsets.only(top: 10),
           height: 30,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                'Type',
-                style: TextStyle(
+              CircleAvatar(
+                radius: 15,
+                backgroundImage: CachedNetworkImageProvider(model.user!.profileImage!.small!),
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+              Text(
+                model.user!.name!,
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.more_horiz,
-                    color: Color.fromARGB(255, 218, 216, 216),
-                  ))
+              Expanded(
+                child: Container(
+                  alignment: Alignment.centerRight,
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.more_horiz,
+                        color: Color.fromARGB(255, 218, 216, 216),
+                      )),
+                ),
+              )
             ],
           ),
         )
