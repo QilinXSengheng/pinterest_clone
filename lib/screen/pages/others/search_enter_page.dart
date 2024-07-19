@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:pinterest_clone/models/SearchModel.dart';
 import 'package:pinterest_clone/models/allAlbum.model.dart';
-
-import '../../../services/lifestyle_service.dart';
-import '../../../storage/storage.dart';
-import '../../widgets/homeWidgets/homePhoto_item.dart';
+import 'package:pinterest_clone/screen/widgets/homeWidgets/home_photo_item.dart';
+import 'package:pinterest_clone/services/lifestyle_service.dart';
 
 int a = 0;
-List<AllPhotoModel> photoList = [];
+List<AllPhotoModel> photoListSearch = [];
 
-class HomePhotoEnter extends StatefulWidget {
-  HomePhotoEnter(this.model, {super.key});
-  AllPhotoModel model;
+class SearchPhotoEnter extends StatefulWidget {
+  const SearchPhotoEnter(this.model, {super.key});
+  final Result model;
   @override
-  State<HomePhotoEnter> createState() => _HomePhotoEnterState();
+  State<SearchPhotoEnter> createState() => _SearchPhotoEnterState();
 }
 
-class _HomePhotoEnterState extends State<HomePhotoEnter> {
+class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -139,21 +138,18 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                 ],
                               ),
                               Expanded(child: Container()),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  shape: const StadiumBorder(),
-                                  backgroundColor: const Color.fromARGB(255, 63, 61, 61),
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: const Color.fromARGB(255, 63, 61, 61),
                                 ),
-                                child: const Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 5, vertical: 14),
-                                  child: Text(
-                                    'Follow',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                child: const Text(
+                                  'Follow',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
@@ -210,72 +206,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                   const SizedBox(
                                     width: 5,
                                   ),
-                                  ElevatedButton(
-                                    onPressed: () async {
-                                      var item = widget.model;
-                                      a++;
-                                      box!.add(item);
-                                      ScaffoldMessenger.of(context).showSnackBar(
-                                        SnackBar(
-                                          backgroundColor: Colors.transparent,
-                                          margin: EdgeInsets.only(
-                                            bottom: MediaQuery.of(context).size.height - 95,
-                                            top: 25,
-                                          ),
-                                          dismissDirection: DismissDirection.up,
-                                          behavior: SnackBarBehavior.floating,
-                                          duration: const Duration(seconds: 1),
-                                          content: SizedBox(
-                                            width: MediaQuery.of(context).size.width * 0.6,
-                                            height: 80,
-                                            child: Container(
-                                              padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 8),
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(40),
-                                                color: const Color.fromARGB(255, 26, 24, 24),
-                                              ),
-                                              child: Row(
-                                                crossAxisAlignment: CrossAxisAlignment.center,
-                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                children: [
-                                                  Image(
-                                                    image: NetworkImage(
-                                                      widget.model.urls!.small!,
-                                                    ),
-                                                    height: 40,
-                                                    width: 40,
-                                                  ),
-                                                  const Text(
-                                                    'Image saved to your profile',
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 18,
-                                                      fontWeight: FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                      shape: const StadiumBorder(),
-                                      backgroundColor: const Color.fromARGB(255, 189, 6, 6),
-                                    ),
-                                    child: const Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 18),
-                                      child: Text(
-                                        'Save',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
                                 ],
                               ),
                               IconButton(
@@ -327,7 +257,7 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                 EasyLoading.showError(l);
                               }, (r) {
                                 EasyLoading.dismiss();
-                                photoList = r;
+                                photoListSearch = r;
                               });
                               return Padding(
                                 padding: const EdgeInsets.all(5),
@@ -338,10 +268,10 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                     gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 2,
                                     ),
-                                    itemCount: photoList.length,
+                                    itemCount: photoListSearch.length,
                                     physics: const ClampingScrollPhysics(),
                                     itemBuilder: (context, index) {
-                                      return homeItem1(photoList[index], context);
+                                      return homeItem1(photoListSearch[index], context);
                                     }),
                               );
                             } else {

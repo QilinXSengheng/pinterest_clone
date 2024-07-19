@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:pinterest_clone/screen/widgets/chatWidgets.dart/collection_item.dart';
 import 'package:pinterest_clone/storage/storage.dart';
 
 import '../../../models/SearchModel.dart';
 import '../../../services/photo_service.dart';
-import '../../widgets/homeWidgets/homePhoto_item.dart';
+import '../../widgets/homeWidgets/home_photo_item.dart';
 
 List<Result> searchList = [];
 
@@ -21,6 +22,44 @@ class _SearchPageState extends State<SearchPage> {
 
   int _currentPage = 1;
   bool showHistory = false;
+
+  List<Map<String, dynamic>> ideasForYou = [
+    {
+      'title': 'Loki Marvels',
+      'image': 'assets/loki.jpg',
+    },
+    {
+      'title': 'One Piece',
+      'image': 'assets/one-piece.jpg',
+    },
+  ];
+
+  List<Map<String, dynamic>> popularOnPinterest = [
+    {
+      'title': 'Animal',
+      'image': 'assets/animal.jpg',
+    },
+    {
+      'title': 'Wallpapers',
+      'image': 'assets/wallpaper.jpg',
+    },
+    {
+      'title': 'Fruits',
+      'image': 'assets/fruits.jpg',
+    },
+    {
+      'title': 'Celebrities',
+      'image': 'assets/celebrity.jpg',
+    },
+    {
+      'title': 'Dogs',
+      'image': 'assets/dogs.jpg',
+    },
+    {
+      'title': 'Cartoons',
+      'image': 'assets/cartoon.jpg',
+    },
+  ];
 
   final ScrollController _scrollController = ScrollController();
   @override
@@ -140,27 +179,94 @@ class _SearchPageState extends State<SearchPage> {
                 );
               },
             )
-          : Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height,
-                child: searchList.isEmpty
-                    ? const Center(
-                        child: Text('No result'),
-                      )
-                    : MasonryGridView.count(
-                        controller: _scrollController,
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 4,
-                        crossAxisSpacing: 4,
-                        itemCount: searchList.length,
-                        itemBuilder: (context, index) {
-                          return searchItem(
-                            searchList[index],
-                            context,
-                          );
-                        },
-                      ),
+          : SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: SizedBox(
+                      child: searchList.isEmpty
+                          ? Column(
+                              children: [
+                                // * Ideas for you
+                                Container(
+                                  alignment: Alignment.center,
+                                  margin: const EdgeInsets.only(bottom: 20),
+                                  child: const Text(
+                                    'Ideas for you',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                GridView.builder(
+                                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2,
+                                    crossAxisSpacing: 4,
+                                    mainAxisSpacing: 10,
+                                    childAspectRatio: 1.5,
+                                  ),
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  shrinkWrap: true,
+                                  itemCount: ideasForYou.length,
+                                  itemBuilder: (context, index) {
+                                    return CollectionItem(
+                                      imageUrl: ideasForYou[index]['image'],
+                                      title: ideasForYou[index]['title'],
+                                    );
+                                  },
+                                ),
+                                // * Popular on Pinterest
+                                Container(
+                                  alignment: Alignment.center,
+                                  margin: const EdgeInsets.only(top: 20, bottom: 20),
+                                  child: const Text(
+                                    'Popular on Pinterest',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                GridView.builder(
+                                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2,
+                                    crossAxisSpacing: 4,
+                                    mainAxisSpacing: 10,
+                                    childAspectRatio: 1.5,
+                                  ),
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  shrinkWrap: true,
+                                  itemCount: popularOnPinterest.length,
+                                  itemBuilder: (context, index) {
+                                    return CollectionItem(
+                                      imageUrl: popularOnPinterest[index]['image'],
+                                      title: popularOnPinterest[index]['title'],
+                                    );
+                                  },
+                                ),
+                              ],
+                            )
+                          : MasonryGridView.count(
+                              shrinkWrap: true,
+                              controller: _scrollController,
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 4,
+                              crossAxisSpacing: 4,
+                              itemCount: searchList.length,
+                              itemBuilder: (context, index) {
+                                return searchItem(
+                                  searchList[index],
+                                  context,
+                                );
+                              },
+                            ),
+                    ),
+                  ),
+                ],
               ),
             ),
     );
