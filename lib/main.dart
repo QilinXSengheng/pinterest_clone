@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:pinterest_clone/models/allAlbum.model.dart';
+import 'package:pinterest_clone/screen/pages/bottomNavPages/account_page.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/add.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/chat.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/home.dart';
@@ -62,7 +63,8 @@ class _PageState extends State<Page> {
         child: Container(
           margin: const EdgeInsets.only(bottom: 20),
           height: 70,
-          decoration: BoxDecoration(color: const Color.fromARGB(255, 31, 40, 48), borderRadius: BorderRadius.circular(20)),
+          decoration:
+              BoxDecoration(color: const Color.fromARGB(255, 31, 40, 48), borderRadius: BorderRadius.circular(20)),
           child: SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: ListView.builder(
@@ -104,7 +106,7 @@ class _PageState extends State<Page> {
           SearchPage(),
           AddPage(),
           ChatPage(),
-          ProfilePage(),
+          AccountPage(),
         ],
       ),
     );
