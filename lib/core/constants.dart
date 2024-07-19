@@ -1,9 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
-
-class AppInit{
+class AppInit {
   static void configLoading() {
     EasyLoading.instance
       ..displayDuration = const Duration(seconds: 1)

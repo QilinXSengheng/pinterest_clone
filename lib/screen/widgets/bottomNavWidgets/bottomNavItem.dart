@@ -4,7 +4,6 @@ import 'package:pinterest_clone/screen/pages/bottomNavPages/add.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/chat.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/home.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/search.dart';
-import 'package:pinterest_clone/screen/pages/others/login_page.dart';
 import 'package:rive/rive.dart';
 
 import '../../../main.dart';
@@ -15,12 +14,10 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
       index != 2 ? b = index : b;
       index == 2
           ? showModalBottomSheet(
-              backgroundColor: const Color.fromARGB(0, 110, 96, 96),
               context: context,
               builder: (BuildContext context) {
                 return Container(
                   decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 51, 49, 49),
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(40),
                     ),
@@ -39,14 +36,12 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
                               },
                               icon: const Icon(
                                 Icons.close,
-                                color: Colors.white,
                               ),
                             ),
                             const Text(
                               'Start creating now',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -68,13 +63,10 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
                                   width: 70,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color:
-                                        const Color.fromARGB(255, 77, 74, 74),
                                   ),
                                   child: const Center(
                                     child: Icon(
                                       Icons.all_inbox_rounded,
-                                      color: Colors.white,
                                       size: 35,
                                     ),
                                   ),
@@ -85,7 +77,6 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
                                 const Text(
                                   'Idea Pin',
                                   style: TextStyle(
-                                    color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 12,
                                   ),
@@ -102,13 +93,10 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
                                   width: 70,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color:
-                                        const Color.fromARGB(255, 77, 74, 74),
                                   ),
                                   child: const Center(
                                     child: Icon(
                                       Icons.pin_drop,
-                                      color: Colors.white,
                                       size: 35,
                                     ),
                                   ),
@@ -119,7 +107,6 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
                                 const Text(
                                   'Pin',
                                   style: TextStyle(
-                                    color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 12,
                                   ),
@@ -136,17 +123,11 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
                                   width: 70,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color:
-                                        const Color.fromARGB(255, 77, 74, 74),
                                   ),
-                                  child: Center(
-                                    child: IconButton(
-                                      icon: const Icon(Icons.pages_rounded),
-                                      color: Colors.white,
-                                      onPressed: () => Navigator.of(context)
-                                          .push(MaterialPageRoute(
-                                              builder: (context) =>
-                                                  LoginPage())),
+                                  child: const Center(
+                                    child: Icon(
+                                      Icons.pages_rounded,
+                                      size: 35,
                                     ),
                                   ),
                                 ),
@@ -156,7 +137,6 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
                                 const Text(
                                   'Board',
                                   style: TextStyle(
-                                    color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 12,
                                   ),
@@ -190,7 +170,6 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
                 duration: const Duration(seconds: 1),
                 curve: Curves.easeInOutExpo,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 227, 238, 247),
                   borderRadius: BorderRadius.circular(5),
                 ),
               ),

@@ -22,14 +22,12 @@ class UpdatesItemWidget extends StatelessWidget {
         title: Text(
           model.altDescription ?? 'No description',
           style: const TextStyle(
-            color: Colors.white,
             fontSize: 16,
           ),
         ),
         subtitle: Text(
           'posted at ${model.createdAt}',
           style: const TextStyle(
-            color: Colors.white,
             fontSize: 14,
           ),
         ));

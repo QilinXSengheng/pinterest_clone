@@ -21,17 +21,13 @@ class _ProfilePageState extends State<ProfilePage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 24, 23, 23),
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 24, 23, 23),
           elevation: 0,
-          foregroundColor: Colors.white,
           actions: [
             IconButton(
               onPressed: () {},
               icon: const Icon(
                 Icons.share,
-                color: Colors.white,
                 size: 25,
               ),
             ),
@@ -44,7 +40,6 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               icon: const Icon(
                 Icons.settings,
-                color: Colors.white,
                 size: 25,
               ),
             ),
@@ -82,7 +77,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                 child: Text(
                                   info[0].name[0],
                                   style: const TextStyle(
-                                    color: Colors.white,
                                     fontSize: 40,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -95,7 +89,6 @@ class _ProfilePageState extends State<ProfilePage> {
                             Text(
                               info[0].name.toString(),
                               style: const TextStyle(
-                                color: Colors.white,
                                 fontSize: 38,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -106,7 +99,6 @@ class _ProfilePageState extends State<ProfilePage> {
                             Text(
                               info[0].username.toString(),
                               style: const TextStyle(
-                                color: Color.fromARGB(255, 138, 137, 137),
                                 fontSize: 18,
                               ),
                             ),
@@ -116,7 +108,6 @@ class _ProfilePageState extends State<ProfilePage> {
                             Text(
                               '${info[0].followersCount} followers . ${info[0].followingCount} following',
                               style: const TextStyle(
-                                color: Colors.white,
                                 fontSize: 18,
                               ),
                             ),
@@ -131,7 +122,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                   backgroundColor: Colors.transparent,
                                   bottom: const TabBar(
                                       indicatorWeight: 3,
-                                      indicatorColor: Color.fromARGB(255, 70, 69, 69),
                                       indicatorPadding: EdgeInsets.only(
                                         left: 10,
                                         right: 10,
@@ -150,7 +140,6 @@ class _ProfilePageState extends State<ProfilePage> {
                               height: (MediaQuery.of(context).size.height * 0.332 * box!.values.length) / 2,
                               child: TabBarView(children: [
                                 Container(
-                                  color: const Color.fromARGB(255, 24, 23, 23),
                                   child: Column(
                                     children: [
                                       const SizedBox(
@@ -161,7 +150,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.white,
                                           fontSize: 20,
                                         ),
                                       ),
@@ -178,7 +166,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                               child: Text(
                                                 'Create',
                                                 style: TextStyle(
-                                                  color: Colors.white,
                                                   fontSize: 18,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -189,7 +176,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                 ),
                                 Container(
-                                  color: const Color.fromARGB(255, 24, 23, 23),
                                   child: SingleChildScrollView(
                                     child: Column(
                                       children: [
@@ -203,20 +189,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                                 child: TextFormField(
                                                   textAlignVertical: TextAlignVertical.bottom,
                                                   style: const TextStyle(
-                                                    color: Colors.white,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                                   cursorColor: Colors.red,
                                                   cursorHeight: 25,
                                                   decoration: const InputDecoration(
                                                     hintText: 'Search your Pins',
-                                                    hintStyle: TextStyle(color: Colors.grey),
                                                     prefixIcon: Icon(
                                                       Icons.search,
-                                                      color: Colors.white70,
                                                     ),
                                                     filled: true,
-                                                    fillColor: Color.fromARGB(255, 49, 48, 48),
                                                     border: OutlineInputBorder(
                                                       borderRadius: BorderRadius.all(
                                                         Radius.circular(20),
@@ -230,7 +212,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                                 onPressed: () {},
                                                 icon: const Icon(
                                                   Icons.add,
-                                                  color: Colors.white,
                                                   size: 30,
                                                 ),
                                               ),
@@ -276,7 +257,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                                                           box!.getAt(index)!.description ?? 'Likes',
                                                                           overflow: TextOverflow.ellipsis,
                                                                           style: const TextStyle(
-                                                                            color: Colors.white,
                                                                             fontSize: 12,
                                                                             fontWeight: FontWeight.bold,
                                                                           ),
@@ -288,7 +268,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                                                       onPressed: () {},
                                                                       icon: const Icon(
                                                                         Icons.more_horiz,
-                                                                        color: Color.fromARGB(255, 218, 216, 216),
                                                                       ))
                                                                 ],
                                                               ),
@@ -300,7 +279,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                                         child: Text(
                                                           'You haven\'t saved media',
                                                           style: TextStyle(
-                                                            color: Colors.white,
                                                             fontWeight: FontWeight.bold,
                                                             fontSize: 20,
                                                           ),

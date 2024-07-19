@@ -20,7 +20,7 @@ class ThemeConfig {
   static EdgeInsetsGeometry getPagePadding({
     required double width,
     required EdgeInsets fallback,
-    double? webVerticalPadding,
+    double? webVerticalPadding, required BuildContext context,
   }) {
     if (useWebTheme && width > ThemeConfig.webBreakpoint) {
       return EdgeInsets.symmetric(

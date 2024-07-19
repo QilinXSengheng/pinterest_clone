@@ -22,7 +22,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 15, 15, 15),
       body: Stack(children: [
         SingleChildScrollView(
           child: SafeArea(
@@ -55,7 +54,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                           icon: const Icon(
                             Icons.more_horiz,
                             size: 35,
-                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -72,7 +70,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                               icon: const Icon(
                                 Icons.qr_code_scanner_rounded,
                                 size: 24,
-                                color: Colors.white,
                               ),
                             ),
                           ),
@@ -86,7 +83,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30),
                       ),
-                      color: Color.fromARGB(255, 31, 29, 29),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -112,7 +108,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                     )
                                   : const CircleAvatar(
                                       radius: 24,
-                                      backgroundColor: Colors.white,
                                     ),
                               const SizedBox(
                                 width: 15,
@@ -127,7 +122,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                       widget.model.user!.name!,
                                       overflow: TextOverflow.ellipsis,
                                       style: const TextStyle(
-                                        color: Colors.white,
                                         fontSize: 17,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -136,7 +130,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                   Text(
                                     '${widget.model.likes} Likes',
                                     style: const TextStyle(
-                                      color: Colors.white,
                                       fontSize: 16,
                                     ),
                                   )
@@ -146,7 +139,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
-                                  color: const Color.fromARGB(255, 63, 61, 61),
                                 ),
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 16, vertical: 8),
@@ -172,7 +164,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                   : widget.model.description!,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
-                                color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -188,7 +179,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                   onPressed: () {},
                                   icon: const Icon(
                                     Icons.mode_comment,
-                                    color: Colors.white,
                                     size: 30,
                                   )),
                               Row(
@@ -224,7 +214,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         SnackBar(
-                                          backgroundColor: Colors.transparent,
                                           margin: EdgeInsets.only(
                                             bottom: MediaQuery.of(context)
                                                     .size
@@ -306,7 +295,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                   onPressed: () {},
                                   icon: const Icon(
                                     Icons.share,
-                                    color: Colors.white,
                                     size: 30,
                                   )),
                             ],
@@ -325,7 +313,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: const Color.fromARGB(255, 31, 29, 29),
                     ),
                     child: Column(
                       children: [
@@ -389,7 +376,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
           left: 15,
           child: CircleAvatar(
             radius: 21,
-            backgroundColor: const Color.fromARGB(192, 43, 41, 41),
             child: Center(
               child: IconButton(
                 onPressed: () {
@@ -398,7 +384,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                 icon: const Icon(
                   Icons.arrow_back_ios_new,
                   size: 22,
-                  color: Colors.white,
                 ),
               ),
             ),

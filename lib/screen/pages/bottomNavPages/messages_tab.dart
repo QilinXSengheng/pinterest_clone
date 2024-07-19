@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:pinterest_clone/screen/widgets/chatWidgets.dart/chatPage2Wid.dart';
 
 bool isActive = false;
 
@@ -140,7 +139,7 @@ class _Chat2State extends State<Chat2> {
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 }

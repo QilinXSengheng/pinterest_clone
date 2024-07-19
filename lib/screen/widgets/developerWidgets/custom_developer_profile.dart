@@ -27,7 +27,6 @@ class CustomDeveloperProfile extends StatelessWidget {
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
           ),
         ),
         const SizedBox(height: 10),
@@ -35,7 +34,6 @@ class CustomDeveloperProfile extends StatelessWidget {
           developerRole,
           style: const TextStyle(
             fontSize: 16,
-            color: Colors.white,
           ),
         ),
         const SizedBox(height: 10),
@@ -43,7 +41,6 @@ class CustomDeveloperProfile extends StatelessWidget {
           developerEmail,
           style: const TextStyle(
             fontSize: 16,
-            color: Colors.white,
           ),
         ),
       ],

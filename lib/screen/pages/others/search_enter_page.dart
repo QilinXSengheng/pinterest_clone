@@ -20,7 +20,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 15, 15, 15),
       body: Stack(children: [
         SingleChildScrollView(
           child: SafeArea(
@@ -53,7 +52,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                           icon: const Icon(
                             Icons.more_horiz,
                             size: 35,
-                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -62,14 +60,12 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                         right: 15,
                         child: CircleAvatar(
                           radius: 22,
-                          backgroundColor: const Color.fromARGB(213, 43, 41, 41),
                           child: Center(
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
                                 Icons.qr_code_scanner_rounded,
                                 size: 24,
-                                color: Colors.white,
                               ),
                             ),
                           ),
@@ -83,7 +79,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30),
                       ),
-                      color: Color.fromARGB(255, 31, 29, 29),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -108,7 +103,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                                     )
                                   : const CircleAvatar(
                                       radius: 24,
-                                      backgroundColor: Colors.white,
                                     ),
                               const SizedBox(
                                 width: 15,
@@ -122,7 +116,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                                       widget.model.user!.name!,
                                       overflow: TextOverflow.ellipsis,
                                       style: const TextStyle(
-                                        color: Colors.white,
                                         fontSize: 17,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -131,7 +124,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                                   Text(
                                     '${widget.model.likes} Likes',
                                     style: const TextStyle(
-                                      color: Colors.white,
                                       fontSize: 16,
                                     ),
                                   )
@@ -141,13 +133,11 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
-                                  color: const Color.fromARGB(255, 63, 61, 61),
                                 ),
                                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                                 child: const Text(
                                   'Follow',
                                   style: TextStyle(
-                                    color: Colors.white,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -164,7 +154,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                               widget.model.description == null ? '' : widget.model.description!,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
-                                color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -180,7 +169,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                                   onPressed: () {},
                                   icon: const Icon(
                                     Icons.mode_comment,
-                                    color: Colors.white,
                                     size: 30,
                                   )),
                               Row(
@@ -189,14 +177,12 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                                     onPressed: () {},
                                     style: ElevatedButton.styleFrom(
                                       shape: const StadiumBorder(),
-                                      backgroundColor: const Color.fromARGB(255, 63, 61, 61),
                                     ),
                                     child: const Padding(
                                       padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 18),
                                       child: Text(
                                         'View',
                                         style: TextStyle(
-                                          color: Colors.white,
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -212,7 +198,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                                   onPressed: () {},
                                   icon: const Icon(
                                     Icons.share,
-                                    color: Colors.white,
                                     size: 30,
                                   )),
                             ],
@@ -231,14 +216,12 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: const Color.fromARGB(255, 31, 29, 29),
                     ),
                     child: Column(
                       children: [
                         const Text(
                           'More like this',
                           style: TextStyle(
-                            color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
@@ -292,7 +275,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
           left: 15,
           child: CircleAvatar(
             radius: 21,
-            backgroundColor: const Color.fromARGB(192, 43, 41, 41),
             child: Center(
               child: IconButton(
                 onPressed: () {
@@ -301,7 +283,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                 icon: const Icon(
                   Icons.arrow_back_ios_new,
                   size: 22,
-                  color: Colors.white,
                 ),
               ),
             ),

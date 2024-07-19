@@ -38,7 +38,6 @@ Widget homeItem1(AllPhotoModel model, BuildContext context) {
                 child: Text(
                   model.user!.name!,
                   style: const TextStyle(
-                    color: Colors.white,
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                   ),
@@ -51,7 +50,6 @@ Widget homeItem1(AllPhotoModel model, BuildContext context) {
                       onPressed: () {},
                       icon: const Icon(
                         Icons.more_horiz,
-                        color: Color.fromARGB(255, 218, 216, 216),
                       )),
                 ),
               )
@@ -90,7 +88,6 @@ Widget searchItem(Result post, BuildContext context) {
               const Text(
                 'Type',
                 style: TextStyle(
-                  color: Colors.white,
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),
@@ -99,7 +96,6 @@ Widget searchItem(Result post, BuildContext context) {
                   onPressed: () {},
                   icon: const Icon(
                     Icons.more_horiz,
-                    color: Color.fromARGB(255, 218, 216, 216),
                   ))
             ],
           ),
