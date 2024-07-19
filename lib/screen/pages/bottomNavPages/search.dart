@@ -5,7 +5,7 @@ import 'package:pinterest_clone/storage/storage.dart';
 
 import '../../../models/SearchModel.dart';
 import '../../../services/photo_service.dart';
-import '../../widgets/homeWidgets/homePhoto_item.dart';
+import '../../widgets/homeWidgets/home_photo_item.dart';
 
 List<Result> searchList = [];
 

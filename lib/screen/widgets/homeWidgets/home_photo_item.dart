@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pinterest_clone/models/allAlbum.model.dart';
-import 'package:pinterest_clone/screen/pages/others/SearchEterPage.dart';
-import 'package:pinterest_clone/screen/pages/others/homePhotoEnter.dart';
+import 'package:pinterest_clone/screen/pages/others/home_photo_enter.dart';
+import 'package:pinterest_clone/screen/pages/others/search_enter_page.dart';
 import 'package:pinterest_clone/storage/storage.dart';
 
 import '../../../models/SearchModel.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pinterest_clone/models/userInfo_model.dart';
-import 'package:pinterest_clone/screen/pages/others/setting_page.dart';
+import 'package:pinterest_clone/screen/pages/bottomNavPages/account_page.dart';
 import 'package:pinterest_clone/storage/storage.dart';
 
 import '../../../services/userInfo_service.dart';
@@ -39,7 +39,7 @@ class _ProfilePageState extends State<ProfilePage> {
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const SettingPage(),
+                  builder: (context) => const AccountPage(),
                 ),
               ),
               icon: const Icon(
