@@ -34,12 +34,14 @@ Widget homeItem1(AllPhotoModel model, BuildContext context) {
               const SizedBox(
                 width: 5,
               ),
-              Text(
-                model.user!.name!,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: Text(
+                  model.user!.name!,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               Expanded(
