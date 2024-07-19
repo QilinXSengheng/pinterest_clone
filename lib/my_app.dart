@@ -2,10 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:pinterest_clone/main.dart';
+import 'package:pinterest_clone/screen/pages/bottomNavPages/account_page.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/add.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/chat.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/home.dart';
-import 'package:pinterest_clone/screen/pages/bottomNavPages/profile.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/search.dart';
 import 'package:pinterest_clone/screen/widgets/bottomNavWidgets/bottomNavItem.dart';
 
@@ -84,7 +84,7 @@ class _PageState extends State<Page> {
           SearchPage(),
           AddPage(),
           ChatPage(),
-          ProfilePage(),
+          AccountPage(),
         ],
       ),
     );

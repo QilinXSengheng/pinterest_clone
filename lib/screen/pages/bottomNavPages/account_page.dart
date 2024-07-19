@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:pinterest_clone/models/userInfo_model.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/profile.dart';
 import 'package:pinterest_clone/screen/pages/others/developer_page.dart';
 import 'package:pinterest_clone/services/userInfo_service.dart';
+import 'package:pinterest_clone/widgets/language_bottom_sheet.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -89,6 +88,11 @@ class _AccountPageState extends State<AccountPage> {
           title: 'Account Management',
           onTap: () {},
         ),
+        _buildAccountTile(
+            title: 'Language',
+            onTap: () {
+              LanuagesBottomSheet().show(context);
+            }),
         _buildAccountTile(
           title: 'Profile visibility',
           onTap: () {},
@@ -177,8 +181,7 @@ class _AccountPageState extends State<AccountPage> {
     );
   }
 
-  Widget _buildProfileListTile(
-      {required String profileLetter, required String username, required Function() onTap}) {
+  Widget _buildProfileListTile({required String profileLetter, required String username, required Function() onTap}) {
     return ListTile(
       visualDensity: const VisualDensity(vertical: -4),
       leading: CircleAvatar(
