@@ -4,6 +4,7 @@ import 'package:pinterest_clone/screen/pages/bottomNavPages/chat.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/home.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/profile.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/search.dart';
+import 'package:pinterest_clone/screen/pages/others/login_page.dart';
 import 'package:rive/rive.dart';
 
 import '../../../main.dart';
@@ -67,7 +68,8 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
                                   width: 70,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: const Color.fromARGB(255, 77, 74, 74),
+                                    color:
+                                        const Color.fromARGB(255, 77, 74, 74),
                                   ),
                                   child: const Center(
                                     child: Icon(
@@ -100,7 +102,8 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
                                   width: 70,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: const Color.fromARGB(255, 77, 74, 74),
+                                    color:
+                                        const Color.fromARGB(255, 77, 74, 74),
                                   ),
                                   child: const Center(
                                     child: Icon(
@@ -133,13 +136,17 @@ Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildC
                                   width: 70,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: const Color.fromARGB(255, 77, 74, 74),
+                                    color:
+                                        const Color.fromARGB(255, 77, 74, 74),
                                   ),
-                                  child: const Center(
-                                    child: Icon(
-                                      Icons.pages_rounded,
+                                  child: Center(
+                                    child: IconButton(
+                                      icon: const Icon(Icons.pages_rounded),
                                       color: Colors.white,
-                                      size: 35,
+                                      onPressed: () => Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                              builder: (context) =>
+                                                  LoginPage())),
                                     ),
                                   ),
                                 ),
