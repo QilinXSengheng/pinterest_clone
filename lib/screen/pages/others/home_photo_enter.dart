@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -136,9 +137,9 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                   borderRadius: BorderRadius.circular(30),
                                 ),
                                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                child: const Text(
-                                  'Follow',
-                                  style: TextStyle(
+                                child: Text(
+                                  tr('follow'),
+                                  style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -179,11 +180,11 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                     style: ElevatedButton.styleFrom(
                                       shape: const StadiumBorder(),
                                     ),
-                                    child: const Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 18),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 18),
                                       child: Text(
-                                        'View',
-                                        style: TextStyle(
+                                        tr('view'),
+                                        style: const TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -226,9 +227,9 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                                     height: 40,
                                                     width: 40,
                                                   ),
-                                                  const Text(
-                                                    'Image saved to your profile',
-                                                    style: TextStyle(
+                                                   Text(
+                                                    tr('image_saved_message'),
+                                                    style: const TextStyle(
                                                       fontSize: 18,
                                                       fontWeight: FontWeight.bold,
                                                     ),
@@ -244,11 +245,11 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                       shape: const StadiumBorder(),
                                       backgroundColor: const Color.fromARGB(255, 189, 6, 6),
                                     ),
-                                    child: const Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 18),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 18),
                                       child: Text(
-                                        'Save',
-                                        style: TextStyle(
+                                        tr('save'),
+                                        style: const TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -282,9 +283,9 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                     ),
                     child: Column(
                       children: [
-                        const Text(
-                          'More like this',
-                          style: TextStyle(
+                         Text(
+                          tr('more_like_this'),
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),

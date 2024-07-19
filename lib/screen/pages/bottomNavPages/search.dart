@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -111,17 +112,17 @@ class _SearchPageState extends State<SearchPage> {
                 textAlignVertical: TextAlignVertical.bottom,
                 cursorColor: Colors.red,
                 cursorHeight: 25,
-                decoration: const InputDecoration(
-                    hintText: 'Search for ideas',
-                    hintStyle: TextStyle(color: Colors.grey),
-                    prefixIcon: Icon(
+                decoration: InputDecoration(
+                    hintText: tr('search_hint'),
+                    hintStyle: const TextStyle(color: Colors.grey),
+                    prefixIcon: const Icon(
                       Icons.search,
                     ),
-                    suffixIcon: Icon(
+                    suffixIcon: const Icon(
                       Icons.camera_alt,
                     ),
                     filled: true,
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -184,9 +185,9 @@ class _SearchPageState extends State<SearchPage> {
                                 Container(
                                   alignment: Alignment.center,
                                   margin: const EdgeInsets.only(bottom: 20),
-                                  child: const Text(
-                                    'Ideas for you',
-                                    style: TextStyle(
+                                  child: Text(
+                                    tr('ideas_for_you'),
+                                    style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
@@ -214,9 +215,9 @@ class _SearchPageState extends State<SearchPage> {
                                 Container(
                                   alignment: Alignment.center,
                                   margin: const EdgeInsets.only(top: 20, bottom: 20),
-                                  child: const Text(
-                                    'Popular on Pinterest',
-                                    style: TextStyle(
+                                  child: Text(
+                                    tr('popular_on_pinterest'),
+                                    style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,

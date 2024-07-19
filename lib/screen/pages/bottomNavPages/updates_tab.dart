@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:pinterest_clone/screen/pages/others/all_tab.dart';
@@ -20,9 +21,9 @@ class _Chat1State extends State<Chat1> {
           children: [
             Container(
               margin: const EdgeInsets.only(top: 5),
-              child: const Text(
-                'What you might see',
-                style: TextStyle(
+              child: Text(
+                tr('what_you_might_see'),
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
