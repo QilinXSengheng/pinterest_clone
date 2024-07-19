@@ -210,30 +210,6 @@ class _SearchPhotoEnterState extends State<SearchPhotoEnter> {
                                   const SizedBox(
                                     width: 5,
                                   ),
-                                  // ElevatedButton(
-                                  //   onPressed: () async {
-                                  //     var item = widget.model;
-                                  //     a++;
-                                  //     box!.add(item);
-                                  //   },
-                                  //   style: ElevatedButton.styleFrom(
-                                  //     shape: StadiumBorder(),
-                                  //     backgroundColor:
-                                  //         Color.fromARGB(255, 189, 6, 6),
-                                  //   ),
-                                  //   child: const Padding(
-                                  //     padding: EdgeInsets.symmetric(
-                                  //         horizontal: 5.0, vertical: 18),
-                                  //     child: Text(
-                                  //       'Save',
-                                  //       style: TextStyle(
-                                  //         color: Colors.white,
-                                  //         fontSize: 16,
-                                  //         fontWeight: FontWeight.bold,
-                                  //       ),
-                                  //     ),
-                                  //   ),
-                                  // ),
                                 ],
                               ),
                               IconButton(

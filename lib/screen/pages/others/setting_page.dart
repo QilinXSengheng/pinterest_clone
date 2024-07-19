@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pinterest_clone/screen/pages/others/developer_page.dart';
+import 'package:pinterest_clone/widgets/language_bottom_sheet.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -55,14 +57,16 @@ class SettingPage extends StatelessWidget {
               Icons.language,
               color: Colors.white,
             ),
-            title: const Text(
-              'Language',
-              style: TextStyle(
+            title: Text(
+              tr('enum.language'),
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              LanuagesBottomSheet().show(context);
+            },
             trailing: const Icon(
               Icons.arrow_forward_ios,
               color: Colors.white,

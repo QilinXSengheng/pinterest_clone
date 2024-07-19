@@ -63,11 +63,15 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        body: PageView(physics: const NeverScrollableScrollPhysics(), controller: _controller1, children: [
-          const Page3(),
-          page2(),
-          page1(),
-        ]),
+        body: PageView(
+          physics: const NeverScrollableScrollPhysics(),
+          controller: _controller1,
+          children: [
+            const Page3(),
+            page2(),
+            page1(),
+          ],
+        ),
       ),
     );
   }
