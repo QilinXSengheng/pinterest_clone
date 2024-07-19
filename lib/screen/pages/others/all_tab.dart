@@ -5,6 +5,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pinterest_clone/screen/widgets/homeWidgets/homePhoto_item.dart';
 import 'package:pinterest_clone/services/lifestyle_service.dart';
 import 'package:rive/rive.dart';
+
 import '../../../models/allAlbum.model.dart';
 
 List<AllPhotoModel> photoList3 = [];
@@ -22,7 +23,7 @@ class _Page3State extends State<Page3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 25, 25, 26),
+      backgroundColor: const Color.fromARGB(255, 25, 25, 26),
       body: CustomRefreshIndicator(
         onRefresh: () {
           return Future.delayed(
@@ -52,7 +53,7 @@ class _Page3State extends State<Page3> {
                       0.0,
                       _offsetToArmed * controller.value,
                     ),
-                    child: controller.isLoading ? Center(child: CircularProgressIndicator()) : child,
+                    child: controller.isLoading ? const Center(child: CircularProgressIndicator()) : child,
                   ),
                 ],
               );
@@ -60,14 +61,14 @@ class _Page3State extends State<Page3> {
           );
         },
         child: Container(
-          color: Color.fromARGB(255, 25, 25, 26),
+          color: const Color.fromARGB(255, 25, 25, 26),
           child: photoList3.isEmpty
               ? FutureBuilder(
                   future: LifeAlbumService.getLifeAlbum(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       EasyLoading.show();
-                      return SizedBox();
+                      return const SizedBox();
                     } else if (snapshot.hasData) {
                       snapshot.data?.fold((l) {
                         EasyLoading.showError(l);
@@ -76,7 +77,7 @@ class _Page3State extends State<Page3> {
                         photoList3 = r;
                       });
                       return Padding(
-                        padding: EdgeInsets.all(5),
+                        padding: const EdgeInsets.all(5),
                         child: MasonryGridView.builder(
                             shrinkWrap: true,
                             crossAxisSpacing: 10,
@@ -96,7 +97,7 @@ class _Page3State extends State<Page3> {
                   },
                 )
               : Padding(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   child: MasonryGridView.builder(
                     shrinkWrap: true,
                     crossAxisSpacing: 10,

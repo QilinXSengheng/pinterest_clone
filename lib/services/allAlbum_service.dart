@@ -9,11 +9,8 @@ import '../core/api.dart';
 class AllAlbumService {
   static Future<Either<String, List<AllPhotoModel>>> getCarAlbum(int page) async {
     try {
-      Response response = await Dio().get( '${Endpoints.getPhotos}?page=$page&per_page=50&order_by=ASC',
-          options: Options(headers: {
-            'x-api-key': Endpoints.apiKey,
-            'Authorization': 'Bearer ${Endpoints.token}'
-          }));
+      Response response =
+          await Dio().get('${Endpoints.getPhotos}?page=$page&per_page=50&order_by=ASC', options: Options(headers: {'x-api-key': Endpoints.apiKey, 'Authorization': 'Bearer ${Endpoints.token}'}));
       Log.w(response.statusCode.toString());
       if (response.statusCode == 200 || response.statusCode == 201) {
         List<AllPhotoModel> carAlbumphotos = [];
@@ -25,7 +22,7 @@ class AllAlbumService {
         Log.e(DioExceptions.fromDioError(response.data).toString());
         return left(DioExceptions.fromDioError(response.data).toString());
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       Log.e(e.toString());
       if (DioExceptions.fromDioError(e).toString() == 'Unauthorized') {
         return left('Token xato');

@@ -40,10 +40,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        builder: EasyLoading.init(),
-        home: Page());
+    return MaterialApp(debugShowCheckedModeBanner: false, builder: EasyLoading.init(), home: const Page());
   }
 }
 
@@ -55,7 +52,7 @@ class Page extends StatefulWidget {
 }
 
 class _PageState extends State<Page> {
-  PageController _controller = PageController();
+  final PageController _controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,17 +60,15 @@ class _PageState extends State<Page> {
       floatingActionButton: Container(
         color: Colors.transparent,
         child: Container(
-          margin: EdgeInsets.only(bottom: 20),
+          margin: const EdgeInsets.only(bottom: 20),
           height: 70,
-          decoration: BoxDecoration(
-              color: Color.fromARGB(255, 31, 40, 48),
-              borderRadius: BorderRadius.circular(20)),
+          decoration: BoxDecoration(color: const Color.fromARGB(255, 31, 40, 48), borderRadius: BorderRadius.circular(20)),
           child: SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: ListView.builder(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: 5,
               itemBuilder: (context, index) {
                 return Padding(
@@ -96,7 +91,7 @@ class _PageState extends State<Page> {
         ),
       ),
       body: PageView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         onPageChanged: (value) {
           b = value;
           page = b;
