@@ -1,4 +1,14 @@
 {
   "bottom_sheet.change_language": "Change Language",
-  "enum.language": "Language"
+  "enum.language": "Language",
+  "search_hint": "Search for ideas",
+  "ideas_for_you": "Ideas for you",
+  "popular_on_pinterest": "Popular on Pinterest",
+  "follow": "Follow",
+  "view": "View",
+  "save": "Save",
+  "image_saved_message": "Image saved to your profile",
+  "more_like_this": "More like this",
+  "message": "Message",
+  "contacts": "Contacts"
 }

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pinterest_clone/screen/widgets/chatWidgets.dart/chatPage2Wid.dart';
 
@@ -26,8 +27,8 @@ class _Chat2State extends State<Chat2> {
         Container(
           margin: const EdgeInsets.only(top: 15),
           padding: const EdgeInsets.only(left: 5),
-          child: const Text(
-            'Message',
+          child: Text(
+          tr('message'),
             style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
@@ -130,8 +131,8 @@ class _Chat2State extends State<Chat2> {
         Container(
           margin: const EdgeInsets.only(top: 15),
           padding: const EdgeInsets.only(left: 5),
-          child: const Text(
-            'Contacts',
+          child:  Text(
+            tr('contacts'),
             style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
