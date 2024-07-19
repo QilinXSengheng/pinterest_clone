@@ -71,10 +71,8 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 24, 23, 23),
       appBar: AppBar(
           elevation: 0,
-          backgroundColor: const Color.fromARGB(255, 24, 23, 23),
           title: SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             height: 50,
@@ -108,7 +106,6 @@ class _SearchPageState extends State<SearchPage> {
                 },
                 controller: search,
                 style: const TextStyle(
-                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
                 textAlignVertical: TextAlignVertical.bottom,
@@ -119,14 +116,11 @@ class _SearchPageState extends State<SearchPage> {
                     hintStyle: TextStyle(color: Colors.grey),
                     prefixIcon: Icon(
                       Icons.search,
-                      color: Colors.white70,
                     ),
                     suffixIcon: Icon(
                       Icons.camera_alt,
-                      color: Colors.white70,
                     ),
                     filled: true,
-                    fillColor: Color.fromARGB(255, 49, 48, 48),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
@@ -155,7 +149,6 @@ class _SearchPageState extends State<SearchPage> {
                             searchedPhotos!.getAt(index)!,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
-                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 17,
                             ),
@@ -170,7 +163,6 @@ class _SearchPageState extends State<SearchPage> {
                           icon: const Icon(
                             Icons.clear,
                             size: 22,
-                            color: Colors.white,
                           ),
                         ),
                       ],

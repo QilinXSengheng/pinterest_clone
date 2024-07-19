@@ -23,7 +23,6 @@ class _Page3State extends State<Page3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 25, 25, 26),
       body: CustomRefreshIndicator(
         onRefresh: () {
           return Future.delayed(
@@ -61,7 +60,6 @@ class _Page3State extends State<Page3> {
           );
         },
         child: Container(
-          color: const Color.fromARGB(255, 25, 25, 26),
           child: photoList3.isEmpty
               ? FutureBuilder(
                   future: LifeAlbumService.getLifeAlbum(),

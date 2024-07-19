@@ -15,7 +15,6 @@ class _Chat1State extends State<Chat1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 24, 23, 23),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -26,7 +25,6 @@ class _Chat1State extends State<Chat1> {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
                 ),
               ),
             ),

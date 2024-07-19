@@ -15,14 +15,11 @@ class _ChatPageState extends State<ChatPage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 24, 23, 23),
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 24, 23, 23),
           centerTitle: true,
           title: const SizedBox(
             width: 200,
             child: TabBar(
-              indicatorColor: Color.fromARGB(255, 53, 51, 51),
               indicatorWeight: 4,
               tabs: [
                 Tab(

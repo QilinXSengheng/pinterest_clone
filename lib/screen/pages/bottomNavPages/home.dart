@@ -39,11 +39,8 @@ class _HomePageState extends State<HomePage> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 25, 25, 26),
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 25, 25, 26),
           title: TabBar(
-            indicatorColor: const Color.fromARGB(255, 190, 189, 189),
             isScrollable: true,
             onTap: (value) {
               page = value;

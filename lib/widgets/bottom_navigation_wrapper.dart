@@ -157,6 +157,7 @@ class BottomNavigationWrapper extends StatelessWidget {
         margin: ThemeConfig.getPagePadding(
           width: constraints.maxWidth,
           fallback: EdgeInsets.zero,
+          context: context,
         ),
         decoration: transparent
             ? null
