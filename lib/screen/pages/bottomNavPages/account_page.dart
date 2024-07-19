@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:pinterest_clone/models/userInfo_model.dart';
@@ -21,7 +22,7 @@ class _AccountPageState extends State<AccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your account'),
+        title: Text(tr('your_account')),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -77,25 +78,25 @@ class _AccountPageState extends State<AccountPage> {
       children: [
         Container(
           alignment: Alignment.centerLeft,
-          child: const Text(
-            'Settings',
-            style: TextStyle(
+          child: Text(
+            tr('settings'),
+            style: const TextStyle(
               color: Colors.grey,
             ),
           ),
         ),
         const SizedBox(height: 10),
         _buildAccountTile(
-          title: 'Account Management',
+          title: tr('account_management'),
           onTap: () {},
         ),
         _buildAccountTile(
-            title: 'Language',
+            title: tr('language'),
             onTap: () {
               LanuagesBottomSheet().show(context);
             }),
         _buildAccountTile(
-          title: 'Appearance',
+          title: tr('appearance'),
           onTap: () => Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) => const AppearanceView(),
@@ -103,23 +104,23 @@ class _AccountPageState extends State<AccountPage> {
           ),
         ),
         _buildAccountTile(
-          title: 'Profile visibility',
+          title: tr('profile_visibility'),
           onTap: () {},
         ),
         _buildAccountTile(
-          title: 'Home feed turner',
+          title: tr('home_feed_tuner'),
           onTap: () {},
         ),
         _buildAccountTile(
-          title: 'Claimed accounts',
+          title: tr('claimed_accounts'),
           onTap: () {},
         ),
         _buildAccountTile(
-          title: 'Notifications',
+          title: tr('notifications'),
           onTap: () {},
         ),
         _buildAccountTile(
-          title: 'Privacy and Data',
+          title: tr('privacy_and_data'),
           onTap: () {},
         ),
       ],
@@ -140,17 +141,17 @@ class _AccountPageState extends State<AccountPage> {
         ),
         const SizedBox(height: 10),
         _buildAccountTile(
-          title: 'Add account',
+          title: tr('add_account'),
           onTap: () {},
         ),
         _buildAccountTile(
-          title: 'Security',
+          title: tr('security'),
           onTap: () {},
         ),
         _buildAccountTile(
-          title: 'Log in',
+          title: tr('login'),
           onTap: () => Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => LoginPage())),
+              .push(MaterialPageRoute(builder: (context) => const LoginPage())),
         ),
       ],
     );
@@ -161,30 +162,30 @@ class _AccountPageState extends State<AccountPage> {
       children: [
         Container(
           alignment: Alignment.centerLeft,
-          child: const Text(
-            'Support',
-            style: TextStyle(
+          child: Text(
+            tr('support'),
+            style: const TextStyle(
               color: Colors.grey,
             ),
           ),
         ),
         const SizedBox(height: 10),
         _buildAccountTile(
-          title: 'Help Center',
+          title: tr('help_center'),
           onTap: () {},
         ),
         _buildAccountTile(
-          title: 'Developers',
+          title: tr('developers'),
           onTap: () => Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => const DeveloperPage()),
           ),
         ),
         _buildAccountTile(
-          title: 'Terms of service',
+          title: tr('terms_of_service'),
           onTap: () {},
         ),
         _buildAccountTile(
-          title: 'Privacy policy',
+          title: tr('privacy_policy'),
           onTap: () {},
         ),
       ],
@@ -210,7 +211,7 @@ class _AccountPageState extends State<AccountPage> {
         ),
       ),
       title: Text(username),
-      subtitle: const Text('View profile'),
+      subtitle: Text(tr('view_profile')),
       onTap: onTap,
       trailing: const Icon(
         Icons.arrow_forward_ios,

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 bool isActive = false;
@@ -22,12 +23,12 @@ class _Chat2State extends State<Chat2> {
             children: [
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.65,
-                child: const Center(
+                child:  Center(
                   child: Text(
-                    'Share ideas width your friends',
+                    tr('share_ideas_with_friends'),
                     maxLines: 2,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
                     ),
@@ -45,13 +46,13 @@ class _Chat2State extends State<Chat2> {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
-                  decoration: const InputDecoration(
-                      hintText: 'Search by name or email address',
-                      prefixIcon: Icon(
+                  decoration: InputDecoration(
+                      hintText: tr('search_by_name_or_email_address'),
+                      prefixIcon: const Icon(
                         Icons.search,
                       ),
                       filled: true,
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),

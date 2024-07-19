@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pinterest_clone/screen/widgets/developerWidgets/custom_developer_profile.dart';
 
@@ -35,7 +36,7 @@ class DeveloperPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Developers'),
+        title: Text(tr('developers')),
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -46,9 +47,9 @@ class DeveloperPage extends StatelessWidget {
               // * Title
               Container(
                 alignment: Alignment.center,
-                child: const Text(
-                  'Meet the Developer',
-                  style: TextStyle(
+                child: Text(
+                  tr('meet_the_developer'),
+                  style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
