@@ -1,10 +1,8 @@
-import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:pinterest_clone/screen/pages/others/other_tab.dart';
 import 'package:pinterest_clone/screen/pages/others/yellow_rush_tab.dart';
 import 'package:pinterest_clone/services/allAlbum_service.dart';
-import 'package:rive/rive.dart';
 
 import '../../../models/allAlbum.model.dart';
 import '../others/all_tab.dart';
@@ -26,8 +24,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     _loadMoreData();
     _scrollController.addListener(() {
-      if (_scrollController.position.pixels ==
-          _scrollController.position.maxScrollExtent) {
+      if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
         _loadMoreData();
       }
     });
@@ -42,11 +39,11 @@ class _HomePageState extends State<HomePage> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 25, 25, 26),
+        backgroundColor: const Color.fromARGB(255, 25, 25, 26),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 25, 25, 26),
+          backgroundColor: const Color.fromARGB(255, 25, 25, 26),
           title: TabBar(
-            indicatorColor: Color.fromARGB(255, 190, 189, 189),
+            indicatorColor: const Color.fromARGB(255, 190, 189, 189),
             isScrollable: true,
             onTap: (value) {
               page = value;
@@ -66,15 +63,11 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        body: PageView(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: _controller1,
-              children: [
-                Page3(),
-                page2(),
-                page1(),
-              ]),
-       
+        body: PageView(physics: const NeverScrollableScrollPhysics(), controller: _controller1, children: [
+          const Page3(),
+          page2(),
+          page1(),
+        ]),
       ),
     );
   }

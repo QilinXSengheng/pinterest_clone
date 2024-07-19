@@ -23,6 +23,7 @@ class _SearchPageState extends State<SearchPage> {
   bool showHistory = false;
 
   final ScrollController _scrollController = ScrollController();
+  @override
   void initState() {
     searchList.clear();
     super.initState();
@@ -31,10 +32,10 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 24, 23, 23),
+      backgroundColor: const Color.fromARGB(255, 24, 23, 23),
       appBar: AppBar(
           elevation: 0,
-          backgroundColor: Color.fromARGB(255, 24, 23, 23),
+          backgroundColor: const Color.fromARGB(255, 24, 23, 23),
           title: SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             height: 50,
@@ -46,23 +47,18 @@ class _SearchPageState extends State<SearchPage> {
                   setState(() {});
                 },
                 onChanged: (value) async {
-                  if (value.length < 1) {
+                  if (value.isEmpty) {
                     searchList.clear();
-                    setState(() {
-                      
-                    });
+                    setState(() {});
                   }
                   if (value.length > 2) {
                     searchList.clear();
-                    var res = await PhotoService.searchPhotos(
-                        search: value, page: _currentPage);
+                    var res = await PhotoService.searchPhotos(search: value, page: _currentPage);
                     res.fold((l) {
                       EasyLoading.showError(l);
                     }, (r) {
                       searchedPhotos!.add(value);
-                      for (int i = 0;
-                          i < searchedPhotos!.values.length - 1;
-                          i++) {
+                      for (int i = 0; i < searchedPhotos!.values.length - 1; i++) {
                         searchedPhotos!.deleteAt(i);
                       }
                       showHistory = false;
@@ -102,51 +98,47 @@ class _SearchPageState extends State<SearchPage> {
             ),
           )),
       body: showHistory == true
-          ? Container(
-              child: ListView.builder(
-                itemCount: searchedPhotos!.values.length,
-                itemBuilder: (context, index) {
-                  return SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: 60,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 25, right: 25),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.6,
-                              child: Text(
-                                searchedPhotos!.getAt(index)!,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 17,
-                                ),
-                              ),
+          ? ListView.builder(
+              itemCount: searchedPhotos!.values.length,
+              itemBuilder: (context, index) {
+                return SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 60,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 25, right: 25),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.6,
+                          child: Text(
+                            searchedPhotos!.getAt(index)!,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
                             ),
-                            IconButton(
-                              onPressed: () {
-                                searchedPhotos!.deleteAt(index);
-
-                                setState(() {});
-                              },
-                              icon: const Icon(
-                                Icons.clear,
-                                size: 22,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
+                        IconButton(
+                          onPressed: () {
+                            searchedPhotos!.deleteAt(index);
+
+                            setState(() {});
+                          },
+                          icon: const Icon(
+                            Icons.clear,
+                            size: 22,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
                     ),
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             )
           : Padding(
               padding: const EdgeInsets.all(16.0),
@@ -174,22 +166,10 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 
+  @override
   void dispose() {
     super.dispose();
     _scrollController.dispose();
     search.dispose();
-  }
-
-  Future<void> _loadMoreData() async {
-    var res = await PhotoService.searchPhotos(page: _currentPage);
-    res.fold((l) {
-      EasyLoading.showError(l);
-    }, (r) {
-      setState(() {
-        searchList.addAll(r);
-        _currentPage++;
-      });
-      return searchList;
-    });
   }
 }

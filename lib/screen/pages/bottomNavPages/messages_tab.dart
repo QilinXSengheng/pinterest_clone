@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pinterest_clone/screen/widgets/chatWidgets.dart/chatPage2Wid.dart';
 
-import '../others/char2EnterPage.dart';
-
 bool isActive = false;
 
 class Chat2 extends StatefulWidget {
@@ -17,7 +15,7 @@ class _Chat2State extends State<Chat2> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 24, 23, 23),
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -58,8 +56,7 @@ class _Chat2State extends State<Chat2> {
                       ),
                       decoration: const InputDecoration(
                           hintText: 'Search by name or email address',
-                          hintStyle: TextStyle(
-                              color: Color.fromARGB(195, 255, 255, 255)),
+                          hintStyle: TextStyle(color: Color.fromARGB(195, 255, 255, 255)),
                           prefixIcon: Icon(
                             Icons.search,
                             color: Color.fromARGB(223, 255, 255, 255),
@@ -76,7 +73,6 @@ class _Chat2State extends State<Chat2> {
                   )
                 ],
               ),
-              
               const SizedBox(
                 height: 20,
               ),
@@ -87,14 +83,12 @@ class _Chat2State extends State<Chat2> {
                       null,
                       'Sync contacts',
                       context,
-                     
                       () {
                         showDialog(
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                backgroundColor:
-                                    const Color.fromARGB(255, 43, 42, 42),
+                                backgroundColor: const Color.fromARGB(255, 43, 42, 42),
                                 title: const Text(
                                   'So\'rov',
                                   style: TextStyle(color: Colors.white),
@@ -106,9 +100,7 @@ class _Chat2State extends State<Chat2> {
                                 actions: <Widget>[
                                   TextButton(
                                     style: TextButton.styleFrom(
-                                      textStyle: Theme.of(context)
-                                          .textTheme
-                                          .labelLarge,
+                                      textStyle: Theme.of(context).textTheme.labelLarge,
                                     ),
                                     child: const Text(
                                       'No',
@@ -120,9 +112,7 @@ class _Chat2State extends State<Chat2> {
                                   ),
                                   TextButton(
                                     style: TextButton.styleFrom(
-                                      textStyle: Theme.of(context)
-                                          .textTheme
-                                          .labelLarge,
+                                      textStyle: Theme.of(context).textTheme.labelLarge,
                                     ),
                                     child: const Text(
                                       'Yes',
