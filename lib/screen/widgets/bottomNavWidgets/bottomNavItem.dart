@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pinterest_clone/screen/pages/bottomNavPages/account_page.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/add.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/chat.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/home.dart';
-import 'package:pinterest_clone/screen/pages/bottomNavPages/profile.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/search.dart';
 import 'package:rive/rive.dart';
 
@@ -212,5 +212,5 @@ List<StatefulWidget> pages = [
   const SearchPage(),
   const AddPage(),
   const ChatPage(),
-  const ProfilePage(),
+  const AccountPage(),
 ];
