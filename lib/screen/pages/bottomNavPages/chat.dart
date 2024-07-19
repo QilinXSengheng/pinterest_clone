@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:pinterest_clone/screen/pages/bottomNavPages/updates_tab.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/messages_tab.dart';
+import 'package:pinterest_clone/screen/pages/bottomNavPages/updates_tab.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
@@ -17,9 +15,9 @@ class _ChatPageState extends State<ChatPage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 24, 23, 23),
+        backgroundColor: const Color.fromARGB(255, 24, 23, 23),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 24, 23, 23),
+          backgroundColor: const Color.fromARGB(255, 24, 23, 23),
           centerTitle: true,
           title: const SizedBox(
             width: 200,

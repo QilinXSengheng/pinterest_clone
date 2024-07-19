@@ -8,14 +8,13 @@ import 'package:rive/rive.dart';
 
 import '../../../main.dart';
 
-Widget bottomNavItem(
-    int index, String bottomIcon, void Function() setUI, BuildContext context) {
+Widget bottomNavItem(int index, String bottomIcon, void Function() setUI, BuildContext context) {
   return InkWell(
     onTap: () {
       index != 2 ? b = index : b;
       index == 2
           ? showModalBottomSheet(
-              backgroundColor: Color.fromARGB(0, 110, 96, 96),
+              backgroundColor: const Color.fromARGB(0, 110, 96, 96),
               context: context,
               builder: (BuildContext context) {
                 return Container(
@@ -30,33 +29,31 @@ Widget bottomNavItem(
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              IconButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                icon: const Icon(
-                                  Icons.close,
-                                  color: Colors.white,
-                                ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              icon: const Icon(
+                                Icons.close,
+                                color: Colors.white,
                               ),
-                              const Text(
-                                'Start creating now',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            ),
+                            const Text(
+                              'Start creating now',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
                               ),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                            ],
-                          ),
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                          ],
                         ),
                       ),
                       Center(
@@ -70,7 +67,7 @@ Widget bottomNavItem(
                                   width: 70,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: Color.fromARGB(255, 77, 74, 74),
+                                    color: const Color.fromARGB(255, 77, 74, 74),
                                   ),
                                   child: const Center(
                                     child: Icon(
@@ -83,7 +80,14 @@ Widget bottomNavItem(
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                Text('Idea Pin',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 12,),),
+                                const Text(
+                                  'Idea Pin',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12,
+                                  ),
+                                ),
                               ],
                             ),
                             const SizedBox(
@@ -96,7 +100,7 @@ Widget bottomNavItem(
                                   width: 70,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: Color.fromARGB(255, 77, 74, 74),
+                                    color: const Color.fromARGB(255, 77, 74, 74),
                                   ),
                                   child: const Center(
                                     child: Icon(
@@ -106,11 +110,17 @@ Widget bottomNavItem(
                                     ),
                                   ),
                                 ),
-                                  const SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text('Pin',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 12,),),
-                            
+                                const Text(
+                                  'Pin',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12,
+                                  ),
+                                ),
                               ],
                             ),
                             const SizedBox(
@@ -123,7 +133,7 @@ Widget bottomNavItem(
                                   width: 70,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: Color.fromARGB(255, 77, 74, 74),
+                                    color: const Color.fromARGB(255, 77, 74, 74),
                                   ),
                                   child: const Center(
                                     child: Icon(
@@ -133,11 +143,17 @@ Widget bottomNavItem(
                                     ),
                                   ),
                                 ),
-                                  const SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text('Board',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 12,),),
-                            
+                                const Text(
+                                  'Board',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12,
+                                  ),
+                                ),
                               ],
                             )
                           ],
@@ -164,10 +180,10 @@ Widget bottomNavItem(
                 height: b == index ? 4 : 0,
                 width: b == index ? 30 : 0,
                 alignment: Alignment.center,
-                duration: Duration(seconds: 1),
+                duration: const Duration(seconds: 1),
                 curve: Curves.easeInOutExpo,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 227, 238, 247),
+                  color: const Color.fromARGB(255, 227, 238, 247),
                   borderRadius: BorderRadius.circular(5),
                 ),
               ),

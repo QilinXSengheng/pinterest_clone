@@ -3,11 +3,9 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pinterest_clone/models/userInfo_model.dart';
 import 'package:pinterest_clone/screen/pages/others/setting_page.dart';
-import 'package:pinterest_clone/screen/widgets/bottomNavWidgets/bottomNavItem.dart';
 import 'package:pinterest_clone/storage/storage.dart';
 
 import '../../../services/userInfo_service.dart';
-import 'home.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -53,7 +51,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ],
         ),
         body: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
@@ -174,9 +172,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                         alignment: Alignment.center,
                                         child: ElevatedButton(
                                             onPressed: () {},
-                                            style: ElevatedButton.styleFrom(
-                                                shape: const StadiumBorder(),
-                                                backgroundColor: const Color.fromARGB(255, 235, 21, 21)),
+                                            style: ElevatedButton.styleFrom(shape: const StadiumBorder(), backgroundColor: const Color.fromARGB(255, 235, 21, 21)),
                                             child: const Padding(
                                               padding: EdgeInsets.symmetric(horizontal: 2, vertical: 12),
                                               child: Text(
@@ -242,87 +238,75 @@ class _ProfilePageState extends State<ProfilePage> {
                                           ),
                                         ),
                                         SafeArea(
-                                          child: Container(
-                                            child: MasonryGridView.builder(
-                                                physics: const NeverScrollableScrollPhysics(),
-                                                shrinkWrap: true,
-                                                gridDelegate:
-                                                    const SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                                                  crossAxisCount: 2,
-                                                ),
-                                                itemCount: box!.values.length,
-                                                //physics: ClampingScrollPhysics(),
-                                                itemBuilder: (context, index) {
-                                                  return box!.isNotEmpty
-                                                      ? Padding(
-                                                          padding: const EdgeInsets.all(5),
-                                                          child: Column(
-                                                            mainAxisSize: MainAxisSize.min,
-                                                            children: [
-                                                              ClipRRect(
-                                                                borderRadius: BorderRadius.circular(15),
-                                                                child: Image(
-                                                                    image: NetworkImage(
-                                                                        box!.getAt(index)!.urls!.small!)),
-                                                              ),
-                                                              Container(
-                                                                height: 30,
-                                                                child: Row(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment.spaceBetween,
-                                                                  children: [
-                                                                    Row(
-                                                                      children: [
-                                                                        const Icon(
-                                                                          Icons.favorite,
-                                                                          color: Color.fromARGB(255, 211, 14, 14),
-                                                                          size: 15,
-                                                                        ),
-                                                                        SizedBox(
-                                                                          width:
-                                                                              MediaQuery.of(context).size.width *
-                                                                                  0.3,
-                                                                          child: Text(
-                                                                            // ignore: unnecessary_null_comparison
-                                                                            box!.getAt(index)!.description ??
-                                                                                'Likes',
-                                                                            overflow: TextOverflow.ellipsis,
-                                                                            style: const TextStyle(
-                                                                              color: Colors.white,
-                                                                              fontSize: 12,
-                                                                              fontWeight: FontWeight.bold,
-                                                                            ),
+                                          child: MasonryGridView.builder(
+                                              physics: const NeverScrollableScrollPhysics(),
+                                              shrinkWrap: true,
+                                              gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                                crossAxisCount: 2,
+                                              ),
+                                              itemCount: box!.values.length,
+                                              //physics: ClampingScrollPhysics(),
+                                              itemBuilder: (context, index) {
+                                                return box!.isNotEmpty
+                                                    ? Padding(
+                                                        padding: const EdgeInsets.all(5),
+                                                        child: Column(
+                                                          mainAxisSize: MainAxisSize.min,
+                                                          children: [
+                                                            ClipRRect(
+                                                              borderRadius: BorderRadius.circular(15),
+                                                              child: Image(image: NetworkImage(box!.getAt(index)!.urls!.small!)),
+                                                            ),
+                                                            SizedBox(
+                                                              height: 30,
+                                                              child: Row(
+                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                children: [
+                                                                  Row(
+                                                                    children: [
+                                                                      const Icon(
+                                                                        Icons.favorite,
+                                                                        color: Color.fromARGB(255, 211, 14, 14),
+                                                                        size: 15,
+                                                                      ),
+                                                                      SizedBox(
+                                                                        width: MediaQuery.of(context).size.width * 0.3,
+                                                                        child: Text(
+                                                                          // ignore: unnecessary_null_comparison
+                                                                          box!.getAt(index)!.description ?? 'Likes',
+                                                                          overflow: TextOverflow.ellipsis,
+                                                                          style: const TextStyle(
+                                                                            color: Colors.white,
+                                                                            fontSize: 12,
+                                                                            fontWeight: FontWeight.bold,
                                                                           ),
                                                                         ),
-                                                                      ],
-                                                                    ),
-                                                                    IconButton(
-                                                                        onPressed: () {},
-                                                                        icon: const Icon(
-                                                                          Icons.more_horiz,
-                                                                          color:
-                                                                              Color.fromARGB(255, 218, 216, 216),
-                                                                        ))
-                                                                  ],
-                                                                ),
-                                                              )
-                                                            ],
-                                                          ),
-                                                        )
-                                                      : Container(
-                                                          child: const Center(
-                                                            child: Text(
-                                                              'You haven\'t saved media',
-                                                              style: TextStyle(
-                                                                color: Colors.white,
-                                                                fontWeight: FontWeight.bold,
-                                                                fontSize: 20,
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                  IconButton(
+                                                                      onPressed: () {},
+                                                                      icon: const Icon(
+                                                                        Icons.more_horiz,
+                                                                        color: Color.fromARGB(255, 218, 216, 216),
+                                                                      ))
+                                                                ],
                                                               ),
-                                                            ),
+                                                            )
+                                                          ],
+                                                        ),
+                                                      )
+                                                    : const Center(
+                                                        child: Text(
+                                                          'You haven\'t saved media',
+                                                          style: TextStyle(
+                                                            color: Colors.white,
+                                                            fontWeight: FontWeight.bold,
+                                                            fontSize: 20,
                                                           ),
-                                                        );
-                                                }),
-                                          ),
+                                                        ),
+                                                      );
+                                              }),
                                         ),
                                       ],
                                     ),

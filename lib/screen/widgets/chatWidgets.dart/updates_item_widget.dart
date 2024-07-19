@@ -15,8 +15,8 @@ class UpdatesItemWidget extends StatelessWidget {
             imageUrl: model.urls!.small!,
             width: 40,
             height: 40,
-            placeholder: (context, url) => CircularProgressIndicator(),
-            errorWidget: (context, url, error) => Icon(Icons.error),
+            placeholder: (context, url) => const CircularProgressIndicator(),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),
         title: Text(

@@ -1,9 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pinterest_clone/models/allAlbum.model.dart';
 import 'package:pinterest_clone/screen/pages/others/SearchEterPage.dart';
 import 'package:pinterest_clone/screen/pages/others/homePhotoEnter.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:pinterest_clone/storage/storage.dart';
+
 import '../../../models/SearchModel.dart';
 
 Widget homeItem1(AllPhotoModel model, BuildContext context) {
@@ -17,8 +18,8 @@ Widget homeItem1(AllPhotoModel model, BuildContext context) {
           borderRadius: BorderRadius.circular(15),
           child: CachedNetworkImage(
             imageUrl: model.urls!.small!,
-            placeholder: (context, url) => CircularProgressIndicator(),
-            errorWidget: (context, url, error) => Icon(Icons.error),
+            placeholder: (context, url) => const CircularProgressIndicator(),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),
         Container(
@@ -79,7 +80,7 @@ Widget searchItem(Result post, BuildContext context) {
             image: NetworkImage(post.urls!.small!),
           ),
         ),
-        Container(
+        SizedBox(
           height: 30,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
