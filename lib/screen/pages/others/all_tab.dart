@@ -2,7 +2,7 @@ import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:pinterest_clone/screen/widgets/homeWidgets/homePhoto_item.dart';
+import 'package:pinterest_clone/screen/widgets/homeWidgets/home_photo_item.dart';
 import 'package:pinterest_clone/services/lifestyle_service.dart';
 import 'package:rive/rive.dart';
 

@@ -58,7 +58,7 @@ class _Chat2State extends State<Chat2> {
             ),
           ),
           subtitle: Text(
-            "នៅណា",
+            "Jak Va",
             style: TextStyle(
               fontSize: 12,
               color: Color.fromARGB(255, 255, 255, 255),
