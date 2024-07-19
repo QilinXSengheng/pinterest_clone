@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
+    "name": "mobile_dev",
+    "short_name": "mobile_dev",
+=======
     "name": "pinterest_clone",
     "short_name": "pinterest_clone",
+>>>>>>> feed1b1990335601e239ef9989c09d44a617e2b9
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
