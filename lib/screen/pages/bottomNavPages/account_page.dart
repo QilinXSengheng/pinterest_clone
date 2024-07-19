@@ -3,6 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:pinterest_clone/models/userInfo_model.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/profile.dart';
 import 'package:pinterest_clone/screen/pages/others/developer_page.dart';
+import 'package:pinterest_clone/screen/pages/others/login_page.dart';
 import 'package:pinterest_clone/services/userInfo_service.dart';
 import 'package:pinterest_clone/widgets/language_bottom_sheet.dart';
 
@@ -45,7 +46,8 @@ class _AccountPageState extends State<AccountPage> {
                       profileLetter: info[0].name[0],
                       username: info[0].username,
                       onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const ProfilePage()),
+                        MaterialPageRoute(
+                            builder: (context) => const ProfilePage()),
                       ),
                     ); // Add a return statement here
                   } else {
@@ -139,8 +141,9 @@ class _AccountPageState extends State<AccountPage> {
           onTap: () {},
         ),
         _buildAccountTile(
-          title: 'Log out',
-          onTap: () {},
+          title: 'Log in',
+          onTap: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => LoginPage())),
         ),
       ],
     );
@@ -181,7 +184,10 @@ class _AccountPageState extends State<AccountPage> {
     );
   }
 
-  Widget _buildProfileListTile({required String profileLetter, required String username, required Function() onTap}) {
+  Widget _buildProfileListTile(
+      {required String profileLetter,
+      required String username,
+      required Function() onTap}) {
     return ListTile(
       visualDensity: const VisualDensity(vertical: -4),
       leading: CircleAvatar(
@@ -198,7 +204,8 @@ class _AccountPageState extends State<AccountPage> {
         ),
       ),
       title: Text(username, style: const TextStyle(color: Colors.white)),
-      subtitle: const Text('View profile', style: TextStyle(color: Colors.white)),
+      subtitle:
+          const Text('View profile', style: TextStyle(color: Colors.white)),
       onTap: onTap,
       trailing: const Icon(
         Icons.arrow_forward_ios,
