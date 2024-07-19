@@ -10,9 +10,6 @@ class AddPage extends StatefulWidget {
 class _AddPageState extends State<AddPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 24, 23, 23),
-      
-    );
+    return const Scaffold();
   }
 }

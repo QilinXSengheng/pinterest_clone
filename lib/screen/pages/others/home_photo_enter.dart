@@ -21,7 +21,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 15, 15, 15),
       body: Stack(children: [
         SingleChildScrollView(
           child: SafeArea(
@@ -54,7 +53,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                           icon: const Icon(
                             Icons.more_horiz,
                             size: 35,
-                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -63,14 +61,12 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                         right: 15,
                         child: CircleAvatar(
                           radius: 22,
-                          backgroundColor: const Color.fromARGB(213, 43, 41, 41),
                           child: Center(
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
                                 Icons.qr_code_scanner_rounded,
                                 size: 24,
-                                color: Colors.white,
                               ),
                             ),
                           ),
@@ -84,7 +80,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30),
                       ),
-                      color: Color.fromARGB(255, 31, 29, 29),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -109,7 +104,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                     )
                                   : const CircleAvatar(
                                       radius: 24,
-                                      backgroundColor: Colors.white,
                                     ),
                               const SizedBox(
                                 width: 15,
@@ -123,7 +117,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                       widget.model.user!.name!,
                                       overflow: TextOverflow.ellipsis,
                                       style: const TextStyle(
-                                        color: Colors.white,
                                         fontSize: 17,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -132,7 +125,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                   Text(
                                     '${widget.model.likes} Likes',
                                     style: const TextStyle(
-                                      color: Colors.white,
                                       fontSize: 16,
                                     ),
                                   )
@@ -142,13 +134,11 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
-                                  color: const Color.fromARGB(255, 63, 61, 61),
                                 ),
                                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                                 child: const Text(
                                   'Follow',
                                   style: TextStyle(
-                                    color: Colors.white,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -165,7 +155,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                               widget.model.description == null ? '' : widget.model.description!,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
-                                color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -181,7 +170,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                   onPressed: () {},
                                   icon: const Icon(
                                     Icons.mode_comment,
-                                    color: Colors.white,
                                     size: 30,
                                   )),
                               Row(
@@ -190,14 +178,12 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                     onPressed: () {},
                                     style: ElevatedButton.styleFrom(
                                       shape: const StadiumBorder(),
-                                      backgroundColor: const Color.fromARGB(255, 63, 61, 61),
                                     ),
                                     child: const Padding(
                                       padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 18),
                                       child: Text(
                                         'View',
                                         style: TextStyle(
-                                          color: Colors.white,
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -214,7 +200,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                       box!.add(item);
                                       ScaffoldMessenger.of(context).showSnackBar(
                                         SnackBar(
-                                          backgroundColor: Colors.transparent,
                                           margin: EdgeInsets.only(
                                             bottom: MediaQuery.of(context).size.height - 95,
                                             top: 25,
@@ -229,7 +214,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                               padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 8),
                                               decoration: BoxDecoration(
                                                 borderRadius: BorderRadius.circular(40),
-                                                color: const Color.fromARGB(255, 26, 24, 24),
                                               ),
                                               child: Row(
                                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -245,7 +229,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                                   const Text(
                                                     'Image saved to your profile',
                                                     style: TextStyle(
-                                                      color: Colors.white,
                                                       fontSize: 18,
                                                       fontWeight: FontWeight.bold,
                                                     ),
@@ -266,7 +249,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                       child: Text(
                                         'Save',
                                         style: TextStyle(
-                                          color: Colors.white,
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -279,7 +261,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                                   onPressed: () {},
                                   icon: const Icon(
                                     Icons.share,
-                                    color: Colors.white,
                                     size: 30,
                                   )),
                             ],
@@ -298,14 +279,12 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: const Color.fromARGB(255, 31, 29, 29),
                     ),
                     child: Column(
                       children: [
                         const Text(
                           'More like this',
                           style: TextStyle(
-                            color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
@@ -359,7 +338,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
           left: 15,
           child: CircleAvatar(
             radius: 21,
-            backgroundColor: const Color.fromARGB(192, 43, 41, 41),
             child: Center(
               child: IconButton(
                 onPressed: () {
@@ -368,7 +346,6 @@ class _HomePhotoEnterState extends State<HomePhotoEnter> {
                 icon: const Icon(
                   Icons.arrow_back_ios_new,
                   size: 22,
-                  color: Colors.white,
                 ),
               ),
             ),

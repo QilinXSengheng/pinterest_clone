@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pinterest_clone/initializer.dart';
 import 'package:pinterest_clone/my_app.dart';
@@ -10,7 +9,6 @@ int b = 0;
 int page = 0;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
   await Initializer.load();
 
   runApp(

@@ -34,11 +34,8 @@ class DeveloperPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 25, 25, 26),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 25, 25, 26),
         title: const Text('Developers'),
-        foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -54,7 +51,6 @@ class DeveloperPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
                   ),
                 ),
               ),

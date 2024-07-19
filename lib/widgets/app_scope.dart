@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pinterest_clone/core/app_constant.dart';
+import 'package:pinterest_clone/widgets/provider_scope.dart';
 
 class AppScope extends StatefulWidget {
   const AppScope({
@@ -18,7 +19,8 @@ class AppScope extends StatefulWidget {
 class _AppScopeState extends State<AppScope> {
   @override
   Widget build(BuildContext context) {
-    return EasyLocalization(
+    return ProviderScope(
+        child: EasyLocalization(
       useFallbackTranslations: true,
       useOnlyLangCode: true,
       saveLocale: true,
@@ -26,6 +28,6 @@ class _AppScopeState extends State<AppScope> {
       supportedLocales: AppConstant.supportedLocales,
       path: 'assets/translations',
       child: widget.builder(context),
-    );
+    ));
   }
 }

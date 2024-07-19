@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pinterest_clone/screen/widgets/chatWidgets.dart/chatPage2Wid.dart';
 
 bool isActive = false;
 
@@ -14,132 +13,138 @@ class _Chat2State extends State<Chat2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 24, 23, 23),
-      body: _buildBody(),
-    );
-  }
-
-  Column _buildBody() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          margin: const EdgeInsets.only(top: 15),
-          padding: const EdgeInsets.only(left: 5),
-          child: const Text(
-            'Message',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-        ),
-        const ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Color.fromARGB(255, 248, 202, 202),
-            child: Text(
-              "D",
-              style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 19,
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.65,
+                child: const Center(
+                  child: Text(
+                    'Share ideas width your friends',
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-          trailing: Text('7:54 AM',
-          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
-          ),
-          title: Text(
-            "Dom",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          subtitle: Text(
-            "Jak Va",
-            style: TextStyle(
-              fontSize: 12,
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-        ),
-        const ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Color.fromARGB(255, 248, 202, 202),
-            child: Text(
-              "H",
-              style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 19,
+              const SizedBox(
+                height: 20,
               ),
-            ),
-            
-          ),
-          trailing: Text('4:14 PM',
-          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
-          ),
-          title: Text(
-            "Va Neathh",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          subtitle: Text(
-            "Hello",
-            style: TextStyle(
-              fontSize: 12,
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-        ),
-        const ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Color.fromARGB(255, 248, 202, 202),
-            child: Text(
-              "V",
-              style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 19,
+              SizedBox(
+                height: 40,
+                width: MediaQuery.of(context).size.width * 0.85,
+                child: TextFormField(
+                  textAlignVertical: TextAlignVertical.bottom,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                  decoration: const InputDecoration(
+                      hintText: 'Search by name or email address',
+                      prefixIcon: Icon(
+                        Icons.search,
+                      ),
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
+                        ),
+                        borderSide: BorderSide.none,
+                      )),
+                ),
               ),
-            ),
-            
-          ),
-          trailing: Text('9:20 PM',
-          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
-          ),
-          title: Text(
-            "Heng",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          subtitle: Text(
-            "Hi",
-            style: TextStyle(
-              fontSize: 12,
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
+              const SizedBox(height: 30),
+              const ListTile(
+                leading: CircleAvatar(
+                  child: Text(
+                    "D",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: 19,
+                    ),
+                  ),
+                ),
+                trailing: Text(
+                  '7:54 AM',
+                ),
+                title: Text(
+                  "Dom",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: Text(
+                  "Jak Va",
+                  style: TextStyle(
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+              const ListTile(
+                leading: CircleAvatar(
+                  child: Text(
+                    "H",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: 19,
+                    ),
+                  ),
+                ),
+                trailing: Text(
+                  '4:14 PM',
+                ),
+                title: Text(
+                  "Va Neathh",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: Text(
+                  "Hello",
+                  style: TextStyle(
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+              const ListTile(
+                leading: CircleAvatar(
+                  child: Text(
+                    "V",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: 19,
+                    ),
+                  ),
+                ),
+                trailing: Text(
+                  '9:20 PM',
+                ),
+                title: Text(
+                  "Heng",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: Text(
+                  "Hi",
+                  style: TextStyle(
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
-        Container(
-          margin: const EdgeInsets.only(top: 15),
-          padding: const EdgeInsets.only(left: 5),
-          child: const Text(
-            'Contacts',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

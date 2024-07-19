@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:pinterest_clone/models/userInfo_model.dart';
 import 'package:pinterest_clone/screen/pages/bottomNavPages/profile.dart';
+import 'package:pinterest_clone/screen/pages/others/appearance_page.dart';
 import 'package:pinterest_clone/screen/pages/others/developer_page.dart';
 import 'package:pinterest_clone/screen/pages/others/login_page.dart';
 import 'package:pinterest_clone/services/userInfo_service.dart';
@@ -19,15 +20,12 @@ class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 25, 25, 26),
       appBar: AppBar(
         title: const Text('Your account'),
-        backgroundColor: const Color.fromARGB(255, 25, 25, 26),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // * Profile
             FutureBuilder(
                 future: UserInfoService.getPhotos(),
                 builder: (context, snapshot) {
@@ -67,6 +65,7 @@ class _AccountPageState extends State<AccountPage> {
                 ],
               ),
             ),
+            const SizedBox(height: 100),
           ],
         ),
       ),
@@ -95,6 +94,14 @@ class _AccountPageState extends State<AccountPage> {
             onTap: () {
               LanuagesBottomSheet().show(context);
             }),
+        _buildAccountTile(
+          title: 'Appearance',
+          onTap: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const AppearanceView(),
+            ),
+          ),
+        ),
         _buildAccountTile(
           title: 'Profile visibility',
           onTap: () {},
@@ -196,20 +203,17 @@ class _AccountPageState extends State<AccountPage> {
           child: Text(
             profileLetter,
             style: const TextStyle(
-              color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
       ),
-      title: Text(username, style: const TextStyle(color: Colors.white)),
-      subtitle:
-          const Text('View profile', style: TextStyle(color: Colors.white)),
+      title: Text(username),
+      subtitle: const Text('View profile'),
       onTap: onTap,
       trailing: const Icon(
         Icons.arrow_forward_ios,
-        color: Colors.white,
       ),
     );
   }
@@ -218,7 +222,7 @@ class _AccountPageState extends State<AccountPage> {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       trailing: const Icon(Icons.arrow_forward_ios),
-      title: Text(title, style: const TextStyle(color: Colors.white)),
+      title: Text(title),
       onTap: onTap,
     );
   }
